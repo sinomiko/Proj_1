@@ -1,0 +1,26 @@
+{
+  "name": "inova",
+  "version": "1.0.0",
+  "description": "Inova Dashboard",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zegang/inova.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zegang/inova/issues"
+  },
+  "homepage": "https://github.com/zegang/inova#readme",
+  "devDependencies": {
+    "express": "^4.14.0"
+  },
+  "dependencies": {
+    "express": "~4.14.0"
+  }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet"></link>
+   <style type="text/css">
+       body{margin:0;padding:0;}
+       .header{margin-top:0;padding:0 50px;border-bottom:2px solid }
+       .middle{margin:0 2% 0  2%;}
+       #devicesContainer .panel{min-width:400px;padding:0;margin:5px 15px;}
+       #dockerimagesContainer .panel{min-width:210px;padding:0;margin:5px 15px;}
+   </style>
+<title>Inova</title>
+</head>
+<body>
+    <div class="header page-header container-fluid">
+        <h1>Inova</h1>
+    </div>
+   <div class="middle">
+    <div class="container-fluid">
+        <div class="row panel panel-info">
+		<div class="panel-heading">
+		<h3 class="panel-title" data-toggle="collapse" href="#devicesContainer" aria-expanded="true" aria-controls="devicesContainer">Devices</h3>
+    		</div>
+    		<div id="devicesContainer" class="panel-body panel-collapse collapse in"></div>            
+        </div>
+   </div>
+
+   <div class="container-fluid">
+        <div class="row panel panel-danger">
+		<div class="panel-heading">
+       		<h3 class="panel-title" data-toggle="collapse" href="#dockerimagesContainer" aria-expanded="true" aria-controls="dockerimagesContainer">Images</h3>
+    		</div>
+    		<div id="dockerimagesContainer" class="panel-body panel-collapse collapse in"></div>            
+        </div>
+   </div>
+   </div>
+
+   <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Delete</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+   <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+   <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+   <script src="./inova.js"></script>
+   <script type="text/javascript">
+	function allowDrop(ev){
+		ev.preventDefault();
+	}
+
+	function drag(ev){
+		ev.dataTransfer.setData("Text",ev.target.id);
+	}
+	
+	function drop(ev){
+		var data=ev.dataTransfer.getData("Text");
+		$('<tr><td>#</td><td>' + data + '</td></tr>').insertBefore($(ev.target).closest('tbody').children('tr').last());
+		ev.preventDefault();
+	}
+
+        $(document).ready(function(){
+		getDevices();
+		getDockerImages();
+	});
+             
+   </script>
+</body>
+</html>

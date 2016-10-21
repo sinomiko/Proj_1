@@ -1,2 +1,2 @@
-# Proj_1
-Notes of python
+# miko's project
+Notes of my project

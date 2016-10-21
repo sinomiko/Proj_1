@@ -1,0 +1,359 @@
+    1  2016-09-20 19:50:31 yum install kernel-devel
+    2  2016-09-20 19:50:31 yum install kernel
+    3  2016-09-20 19:50:31 yum -y install gcc
+    4  2016-09-20 19:50:31 yum install perl
+    5  2016-09-20 19:50:31 git clone git://github.com/martinezjavier/ldd3.git
+    6  2016-09-20 19:50:31 git clone https://github.com/martinezjavier/ldd3.git
+    7  2016-09-20 19:50:31 ls
+    8  2016-09-20 19:50:31 mkdir kerneldev
+    9  2016-09-20 19:50:31 mv kerneldev kernel_dev
+   10  2016-09-20 19:50:31 cd kernel_dev/
+   11  2016-09-20 19:50:31 ls
+   12  2016-09-20 19:50:31 ping www.baidu.com
+   13  2016-09-20 19:50:31 git clone https://github.com/martinezjavier/ldd3.git
+   14  2016-09-20 19:50:31 yum install git 
+   15  2016-09-20 19:50:31 yum install python
+   16  2016-09-20 19:50:31 git clone https://github.com/martinezjavier/ldd3.git
+   17  2016-09-20 19:50:31 git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+   18  2016-09-20 19:50:31 poweroff
+   19  2016-09-20 19:50:31 vim .vimrc 
+   20  2016-09-20 19:50:31 cd /lib/modules/$(KVERSION)/build
+   21  2016-09-20 19:50:31  KVERSION = $(shell uname -r)
+   22  2016-09-20 19:50:31  KVERSION = $( uname -r)
+   23  2016-09-20 19:50:31  KVERSION = `uname -r`
+   24  2016-09-20 19:50:31  KVERSION = "uname -r"
+   25  2016-09-20 19:50:31  KVERSION = 'uname -r'
+   26  2016-09-20 19:50:31 tail -f /var/log/message
+   27  2016-09-20 19:50:31 cd /var/log/messages 
+   28  2016-09-20 19:50:31 vim /var/log/messages
+   29  2016-09-20 19:50:31 tail -f /var/log/messages
+   30  2016-09-20 19:50:31 cd kernel_dev/demo/
+   31  2016-09-20 19:50:31 ls
+   32  2016-09-20 19:50:31 vim bak.Makefile 
+   33  2016-09-20 19:50:31 tail -f /var/log/messages
+   34  2016-09-20 19:50:31 ls
+   35  2016-09-20 19:50:31 cd kernel_dev/
+   36  2016-09-20 19:50:31 ls
+   37  2016-09-20 19:50:31 cd ldd3/
+   38  2016-09-20 19:50:31 ls
+   39  2016-09-20 19:50:31 make
+   40  2016-09-20 19:50:31 vim /root/kernel_dev/ldd3/scull/access.c
+   41  2016-09-20 19:50:31 ls
+   42  2016-09-20 19:50:31 cd snull/
+   43  2016-09-20 19:50:31 ls
+   44  2016-09-20 19:50:31 make
+   45  2016-09-20 19:50:31 uname -r
+   46  2016-09-20 19:50:31 ls
+   47  2016-09-20 19:50:31 vim  Makefile 
+   48  2016-09-20 19:50:31 ..
+   49  2016-09-20 19:50:31 ls
+   50  2016-09-20 19:50:31 vim Makefile 
+   51  2016-09-20 19:50:31 cd ~
+   52  2016-09-20 19:50:31 ls
+   53  2016-09-20 19:50:31 vim .vimrc 
+   54  2016-09-20 19:50:31 cd kernel_dev/
+   55  2016-09-20 19:50:31 ls
+   56  2016-09-20 19:50:31 cd ldd3/
+   57  2016-09-20 19:50:31 ls
+   58  2016-09-20 19:50:31 cd snull/
+   59  2016-09-20 19:50:31 ls
+   60  2016-09-20 19:50:31 vim snull.c 
+   61  2016-09-20 19:50:31 cd /
+   62  2016-09-20 19:50:31 cd ~
+   63  2016-09-20 19:50:31 cd kernel_dev/
+   64  2016-09-20 19:50:31 ls
+   65  2016-09-20 19:50:31 mkdir demo
+   66  2016-09-20 19:50:31 cd demo.
+   67  2016-09-20 19:50:31 cd demo
+   68  2016-09-20 19:50:31 vi hello.c
+   69  2016-09-20 19:50:31 vim /root/.vimrc
+   70  2016-09-20 19:50:31 vi hello.c
+   71  2016-09-20 19:50:31 vim /root/.vimrc
+   72  2016-09-20 19:50:31 vi hello.c
+   73  2016-09-20 19:50:31 vim /root/.vimrc
+   74  2016-09-20 19:50:31 vim re.sh
+   75  2016-09-20 19:50:31 vim he.c
+   76  2016-09-20 19:50:31 ls
+   77  2016-09-20 19:50:31 ks
+   78  2016-09-20 19:50:31 ls
+   79  2016-09-20 19:50:31 ..
+   80  2016-09-20 19:50:31 ls
+   81  2016-09-20 19:50:31 l
+   82  2016-09-20 19:50:31 ls -alt
+   83  2016-09-20 19:50:31 cd ..
+   84  2016-09-20 19:50:31 ls
+   85  2016-09-20 19:50:31 cd demo/
+   86  2016-09-20 19:50:31 ;s
+   87  2016-09-20 19:50:31 ls
+   88  2016-09-20 19:50:31 rm 1
+   89  2016-09-20 19:50:31 ls
+   90  2016-09-20 19:50:31 vim hello.c
+   91  2016-09-20 19:50:31  vi Makefile
+   92  2016-09-20 19:50:31 vim s1.c
+   93  2016-09-20 19:50:31  vi Makefile
+   94  2016-09-20 19:50:31 make
+   95  2016-09-20 19:50:31 vim Makefile 
+   96  2016-09-20 19:50:31 make all
+   97  2016-09-20 19:50:31 ls
+   98  2016-09-20 19:50:31 make clean
+   99  2016-09-20 19:50:31 make
+  100  2016-09-20 19:50:31 make 
+  101  2016-09-20 19:50:31 ls
+  102  2016-09-20 19:50:31 vim Makefile 
+  103  2016-09-20 19:50:31 ls
+  104  2016-09-20 19:50:31 vim Makefile 
+  105  2016-09-20 19:50:31 ls
+  106  2016-09-20 19:50:31 rm -rf 1
+  107  2016-09-20 19:50:31 ls
+  108  2016-09-20 19:50:31 make
+  109  2016-09-20 19:50:31 make clean
+  110  2016-09-20 19:50:31 make
+  111  2016-09-20 19:50:31 make all
+  112  2016-09-20 19:50:31 ls
+  113  2016-09-20 19:50:31 cd /usr/src/kernels/2.6.32-642.4.2.el6.x86_64
+  114  2016-09-20 19:50:31 ls
+  115  2016-09-20 19:50:31 cd ~
+  116  2016-09-20 19:50:31 ls
+  117  2016-09-20 19:50:31 cd kernel_dev/
+  118  2016-09-20 19:50:31 ls
+  119  2016-09-20 19:50:31 cd demo/
+  120  2016-09-20 19:50:31 cd ..
+  121  2016-09-20 19:50:31 ls
+  122  2016-09-20 19:50:31 cd ldd3/
+  123  2016-09-20 19:50:31 ls
+  124  2016-09-20 19:50:31 cd snull/
+  125  2016-09-20 19:50:31 ls
+  126  2016-09-20 19:50:31 vim Makefile 
+  127  2016-09-20 19:50:31 cp Makefile ~/kernel_dev/demo/Makefile 
+  128  2016-09-20 19:50:31 cd ~/kernel_dev/demo/
+  129  2016-09-20 19:50:31 ls
+  130  2016-09-20 19:50:31 make
+  131  2016-09-20 19:50:31 vim Makefile 
+  132  2016-09-20 19:50:31 make
+  133  2016-09-20 19:50:31 ls
+  134  2016-09-20 19:50:31 vim Makefile 
+  135  2016-09-20 19:50:31 ls
+  136  2016-09-20 19:50:31 insmod hello.ko
+  137  2016-09-20 19:50:31 lsmod | less
+  138  2016-09-20 19:50:31 rmmod hello
+  139  2016-09-20 19:50:31 lsmod | less
+  140  2016-09-20 19:50:31 ls
+  141  2016-09-20 19:50:31 vim hello.c
+  142  2016-09-20 19:50:31 ls
+  143  2016-09-20 19:50:31 vim Makefile 
+  144  2016-09-20 19:50:31 make clean
+  145  2016-09-20 19:50:31 ls
+  146  2016-09-20 19:50:31 make
+  147  2016-09-20 19:50:31 ls
+  148  2016-09-20 19:50:31 insmod hello.ko
+  149  2016-09-20 19:50:31 rmmod hello
+  150  2016-09-20 19:50:31 ls
+  151  2016-09-20 19:50:31 make clean
+  152  2016-09-20 19:50:31 ls
+  153  2016-09-20 19:50:31 mv Makefile bak.Makefile 
+  154  2016-09-20 19:50:31 ls
+  155  2016-09-20 19:50:31 make
+  156  2016-09-20 19:50:31 vim Makefile
+  157  2016-09-20 19:50:31 vimdiff Makefile bak.Makefile 
+  158  2016-09-20 19:50:31 vim Makefile 
+  159  2016-09-20 19:50:31 make
+  160  2016-09-20 19:50:31 insmod hello.ko
+  161  2016-09-20 19:50:31 rmmod hello
+  162  2016-09-20 19:50:31 ls
+  163  2016-09-20 19:50:31 vim Makefile 
+  164  2016-09-20 19:50:31 make clean
+  165  2016-09-20 19:50:31 make
+  166  2016-09-20 19:50:31 ls
+  167  2016-09-20 19:50:31 insmod hello.ko
+  168  2016-09-20 19:50:31 lsmod
+  169  2016-09-20 19:50:31 lsmod|less
+  170  2016-09-20 19:50:31 ls
+  171  2016-09-20 19:50:31 rmmod hello
+  172  2016-09-20 19:50:31 ls
+  173  2016-09-20 19:50:31 vim /etc/modules
+  174  2016-09-20 19:50:31 cd /etc
+  175  2016-09-20 19:50:31 ls
+  176  2016-09-20 19:50:31 uname -r
+  177  2016-09-20 19:50:31 ls
+  178  2016-09-20 19:30:58 pip install Django==1.10.1
+  179  2016-09-20 19:31:05 python
+  180  2016-09-20 19:31:29 yum update python
+  181  2016-09-20 19:32:09 yum info python
+  182  2016-09-20 19:32:35 yum update python
+  183  2016-09-20 19:34:32 ls
+  184  2016-09-20 19:34:41 mkdir proj
+  185  2016-09-20 19:34:43 cd proj/
+  186  2016-09-20 19:35:00 wget https://www.python.org/ftp/python/2.7.12/Python-2.7.12.tgz
+  187  2016-09-20 19:36:21 ls
+  188  2016-09-20 19:36:25 ..
+  189  2016-09-20 19:36:28 cd ..
+  190  2016-09-20 19:39:31 ls
+  191  2016-09-20 19:39:38 mkdir script
+  192  2016-09-20 19:39:41 cd script/
+  193  2016-09-20 19:39:42 ..
+  194  2016-09-20 19:39:45 cd ..
+  195  2016-09-20 19:39:51 mkdir software
+  196  2016-09-20 19:39:55 cd script/
+  197  2016-09-20 19:39:58 ls
+  198  2016-09-20 19:40:39 scp esogxig@10.94.142.54:~/.vimrc .
+  199  2016-09-20 19:42:21 scp 
+  200  2016-09-20 19:42:31 vim .bashrc
+  201  2016-09-20 19:47:44 scp esogxig@10.94.142.54:/etc/bash.bashrc .
+  202  2016-09-20 19:47:53 ls
+  203  2016-09-20 19:48:11 vim /etc/bashrc bash.bashrc
+  204  2016-09-20 19:48:27 vimdiff /etc/bashrc bash.bashrc
+  205  2016-09-20 19:49:14 cp bash.bashrc /etc/
+  206  2016-09-20 19:49:28 source /etc/bash.bashrc
+  207  2016-09-20 19:49:31 ls
+  208  2016-09-20 19:49:35 pwd
+  209  2016-09-20 19:49:39 ..
+  210  2016-09-20 19:49:42 exit
+  211  2016-09-20 19:49:47 pwd
+  212  2016-09-20 19:49:58 source /etc/bash.bashrc
+  213  2016-09-20 19:49:59 ls
+  214  2016-09-20 19:50:03 ..
+  215  2016-09-20 19:50:22 mv /etc/bash.bashrc /etc/bashrc
+  216  2016-09-20 19:50:29 exit
+  217  2016-09-20 19:50:40 l
+  218  2016-09-20 19:50:44 cd script/
+  219  2016-09-20 19:50:45 ls
+  220  2016-09-20 19:50:49 l
+  221  2016-09-20 19:51:23 ..
+  222  2016-09-20 19:51:28 ls
+  223  2016-09-20 19:51:32 cd proj/
+  224  2016-09-20 19:51:33 ls
+  225  2016-09-20 19:51:40 mv Python-2.7.12.tgz  ../software/
+  226  2016-09-20 19:51:44 cd ../software/
+  227  2016-09-20 19:51:45 ls
+  228  2016-09-20 19:52:00 tar -zxvf Python-2.7.12.tgz 
+  229  2016-09-20 19:52:04 ls
+  230  2016-09-20 19:52:09 cd Python-2.7.12
+  231  2016-09-20 19:52:10 ls
+  232  2016-09-20 19:52:17 vim README 
+  233  2016-09-20 19:53:42 make install
+  234  2016-09-20 19:53:45 ls
+  235  2016-09-20 19:53:50 make
+  236  2016-09-20 19:54:08 ./config
+  237  2016-09-20 19:54:15 ./install-sh 
+  238  2016-09-20 19:54:26 ls
+  239  2016-09-20 19:54:31 vim install-sh 
+  240  2016-09-20 19:54:45 ./install-sh 
+  241  2016-09-20 19:54:51 ./install-sh install
+  242  2016-09-20 19:54:55 vim install-sh 
+  243  2016-09-20 19:55:29 make install
+  244  2016-09-20 19:55:45 vim README 
+  245  2016-09-20 19:58:14 yum install readline-devel -y
+  246  2016-09-20 19:58:34 ./configure
+  247  2016-09-20 19:59:00 make all -j8
+  248  2016-09-20 20:11:02  make install
+  249  2016-09-20 21:08:32 python
+  250  2016-09-20 21:08:42 ls
+  251  2016-09-20 21:08:56 pip install Django
+  252  2016-09-20 21:34:29 python -v
+  253  2016-09-20 21:35:01 mv /usr/bin/python /usr/bin/python2
+  254  2016-09-20 21:35:39 mv /usr/bin/python /usr/bin/python2.6.6
+  255  2016-09-20 21:36:13 ln /usr/local/bin/python2.7 /usr/bin/python2
+  256  2016-09-20 21:36:21 python -v
+  257  2016-09-20 21:36:46 python
+  258  2016-09-20 21:37:25 vim /usr/bin/yum
+  259  2016-09-20 21:38:23 yum info python
+  260  2016-09-20 21:39:59 ..
+  261  2016-09-20 21:40:01 wget https://pypi.python.org/packages/source/s/setuptools/setuptools-18.2.tar.gz#md5=52b4e48939ef311d7204f8fe940764f4
+  262  2016-09-20 21:40:13 tar xvf setuptools-18.2.tar.gz
+  263  2016-09-20 21:40:14   cd setuptools-18.2
+  264  2016-09-20 21:40:21 python setup.py install
+  265  2016-09-20 21:40:45 ls
+  266  2016-09-20 21:40:51 python setup.py install
+  267  2016-09-20 21:41:40 yum inyum install zlib
+  268  2016-09-20 21:41:52 yum install zlib
+  269  2016-09-20 21:41:59 yum install zlib-devel
+  270  2016-09-20 21:42:14 python setup.py install
+  271  2016-09-20 21:42:33 ..
+  272  2016-09-20 21:42:35 ls
+  273  2016-09-20 21:42:40 cd Python-2.7.12
+  274  2016-09-20 21:42:45 make all
+  275  2016-09-20 21:42:55 make all -j8
+  276  2016-09-20 21:43:00 make clean
+  277  2016-09-20 21:43:03 make all -j8
+  278  2016-09-20 21:44:35 make install
+  279  2016-09-20 21:46:33 ..
+  280  2016-09-20 21:46:34 ls
+  281  2016-09-20 21:46:37 cd setuptools-18.2
+  282  2016-09-20 21:46:47 python setup.py install
+  283  2016-09-20 21:47:25 ..
+  284  2016-09-20 21:47:26 wget https://pypi.python.org/packages/source/p/pip/pip-7.1.2.tar.gz#md5=3823d2343d9f3aaab21cf9c917710196
+  285  2016-09-20 21:47:37 tar xf pip-7.1.2.tar
+  286  2016-09-20 21:47:37   cd pip-7.1.2
+  287  2016-09-20 21:47:44 ls
+  288  2016-09-20 21:48:05 tar -zvxf pip-7.1.2.tar.gz
+  289  2016-09-20 21:48:13 cd  pip-7.1.2
+  290  2016-09-20 21:48:23 python setup.py install
+  291  2016-09-20 21:48:37 pip -V
+  292  2016-09-20 21:49:08 mkdir ~/.pip
+  293  2016-09-20 21:49:27 pip install ipython
+  294  2016-09-20 21:49:36  vim ~/.pip/pip.conf
+  295  2016-09-20 21:50:00 pip install ipython
+  296  2016-09-20 21:50:34 yum install openssl
+  297  2016-09-20 21:50:51 yum install openssl-devel -y
+  298  2016-09-20 21:51:04 ..
+  299  2016-09-20 21:51:05 ls
+  300  2016-09-20 21:51:09 cd Python-2.7.12
+  301  2016-09-20 21:51:12 make clean
+  302  2016-09-20 21:51:21 make all -j8
+  303  2016-09-20 21:53:29 make install 
+  304  2016-09-20 21:55:40 ..
+  305  2016-09-20 21:55:49 pip install ipython
+  306  2016-09-20 21:56:07 pip install Django
+  307  2016-09-20 21:56:32 pip install --upgrade pip
+  308  2016-09-20 21:56:51 pip install --upgrade Django
+  309  2016-09-20 21:57:21 which Django
+  310  2016-09-20 21:58:37 ..
+  311  2016-09-20 21:58:40 cd proj/
+  312  2016-09-20 21:58:47 django-admin.py startproject testdj
+  313  2016-09-20 21:58:49 ls
+  314  2016-09-20 21:58:53 cd testdj/
+  315  2016-09-20 21:59:00 python manage.py runserver
+  316  2016-09-20 21:59:35 yum install sqlite3
+  317  2016-09-20 22:00:19 ...
+  318  2016-09-20 22:00:24 cd software/
+  319  2016-09-20 22:00:26 wget http://pysqlite.googlecode.com/files/pysqlite-2.6.3.tar.gz
+  320  2016-09-20 22:01:35 ls /usr/local/include/
+  321  2016-09-20 22:02:04 yum list python-sqlite
+  322  2016-09-20 22:02:27 yum install sqlite-devel
+  323  2016-09-20 22:02:38 cd Python-2.7.12
+  324  2016-09-20 22:02:47 make clean
+  325  2016-09-20 22:02:52 make all -j8
+  326  2016-09-20 22:04:17 make install -j8
+  327  2016-09-20 22:06:25 ..
+  328  2016-09-20 22:06:28 ls
+  329  2016-09-20 22:06:32 cd proj/testdj/
+  330  2016-09-20 22:06:39 python manage.py runserver
+  331  2016-09-20 22:07:34 python manage.py migrate
+  332  2016-09-20 22:07:37 python manage.py runserver
+  333  2016-09-20 22:36:23 curl http://192.168.94.133:8001/
+  334  2016-09-20 22:42:32 yum groupinstall "Development tools"
+  335  2016-09-20 22:42:40 yum groupinstall "Development tools" -y
+  336  2016-09-20 23:31:27 yum install httpd
+  337  2016-09-20 23:31:32 yum install httpd -y
+  338  2016-09-20 23:32:18 service httpd start
+  339  2016-09-20 23:33:19 yum install mariadb-server mariadb
+  340  2016-09-20 23:35:44 mv /etc/yum.repos.d/CentOS-Base.repo  /etc/yum.repos.d/CentOS-Base.repo.bak
+  341  2016-09-20 23:35:54 vim /etc/yum.repos.d/CentOS-Base.repo
+  342  2016-09-20 23:37:03 wget -O /etc/yum.repos.d/CentOS-Base-aliyun.repo http://mirrors.aliyun.com/repo/Centos-6.repo
+  343  2016-09-20 23:37:14 yum clean all
+  344  2016-09-20 23:37:17 yum makecache
+  345  2016-09-20 23:38:26 yum install mariadb-server mariadb
+  346  2016-09-20 23:38:58 vim /etc/yum.repos.d/CentOS-Base.repo
+  347  2016-09-20 23:39:09 yum info
+  348  2016-09-20 23:40:03 yum info mariadb
+  349  2016-09-20 23:40:10 yum info mysql
+  350  2016-09-20 23:40:41 yum install mysql mysql-server -y
+  351  2016-09-20 23:41:27 service start mysql
+  352  2016-09-20 23:41:45 mysql start
+  353  2016-09-20 23:44:27 yum install php5 phpmyadmin -y
+  354  2016-09-20 23:44:36 yum install php phpmyadmin
+  355  2016-09-20 23:45:04 yum install phpmyadmin
+  356  2016-09-20 23:45:55 rm /etc/yum.repos.d/CentOS-Base-aliyun.repo 
+  357* 2016-09-20 23:46:08 yum 
+  358  2016-09-20 23:46:17 yum makecache
+  359  2016-09-20 23:46:57 history >bak.txt
