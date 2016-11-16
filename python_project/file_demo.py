@@ -1,4 +1,3 @@
-#!/usr/bin/python
 #coding:utf-8
 # fo=open("test.txt")
 # print  fo.read()
