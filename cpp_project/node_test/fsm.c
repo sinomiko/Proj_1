@@ -5,7 +5,7 @@
 	> Created Time: Mon 19 Dec 2016 02:52:12 AM PST
  ************************************************************************/
 #include <stdint.h>
-#include<stdio.h>
+#include <stdio.h>
 #include <malloc.h>
 #include <unistd.h>
 typedef enum SessinoState {
@@ -26,18 +26,21 @@ typedef int (*FsmStateHandler)(PayloadSession* session, uint32_t );
 
 static int fsm_idle_handler(struct PayloadSession* session, uint32_t event)
 {
-    printf("fsm_idle_handler \n");
+    printf("PayloadSession: %d fsm_idle_handler \n",session->idx);
+    return 0;
 }
 
 static int fsm_running_handler(struct PayloadSession* session, uint32_t event)
 {
-    printf("fsm_running_handler \n");
+    printf("PayloadSession: %d fsm_running_handler \n",session->idx);
+    return 0;
 }
 
 
 static int fsm_done_handler(struct PayloadSession* session, uint32_t event)
 {
-     printf("fsm_done_handler \n");
+     printf("PayloadSession: %d fsm_done_handler \n",session->idx);
+     return 0;
 }
 
 static FsmStateHandler s_fsm_handlers[SESSION_STATUS_MAX + 1] = {
