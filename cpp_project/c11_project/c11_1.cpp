@@ -8,6 +8,8 @@
 #include<iostream>
 #include<map>
 #include<vector>
+#include<string>
+
 template <typename T, typename U>
 auto add(T t, U u) -> decltype(t+u)
 {
@@ -95,7 +97,7 @@ int main(int argc, char* argv[])
     Foo<A<int>>::type xx2;
     xx2=A<int>(8);
  
-    std::cout << " xx2.m_: " << xx2.m_ << std::endl; 
+    std::cout << __FUNCTION__  << " xx2.m_: " << xx2.m_ << std::endl; 
 
    
     fun(8); 
@@ -117,6 +119,30 @@ int main(int argc, char* argv[])
     std::vector<int> arrs = {1,2,3,4};
     for(auto arr : arrs)  //auto , auto & , const auto &
         std::cout << " arr: " << arr << std::endl;
+
+    auto && __range = (arrs);
+    for(auto __begin = __range.begin(), __end = __range.end(); __begin != __end; ++__begin)
+    {
+        auto val = *__begin;
+        std::cout << val << std::endl;
+        arrs.push_back(val); 
+    }
+
+    for(auto arr : arrs)
+        std::cout << " arr_new: " << arr << std::endl;
+
+    std::map<std::string, int> map_string_int = 
+    {
+        {"1",1},{"2",2},{"3",3}
+    };
+
+    for(auto &val : map_string_int)
+    {
+        std::cout << val.first  << " -> " << val.second << std::endl;
+    }
+
+    for(auto ite = map_string_int.begin(); ite != map_string_int.end(); ite++ )
+        std::cout << ite->first  << " -> " << ite->second << std::endl;
 
     return 0;
 /* output: 
