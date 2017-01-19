@@ -1,0 +1,8 @@
+---- sync Matches (7 in 5 files) ----
+Main.c (init):static inline _syscall0(int,sync)
+Main.c (init):	sync();
+Makefile:	sync
+Makefile:	sync
+Makefile (kernel):	sync
+Makefile (lib):	sync
+Unistd.h (include):int sync(void);
