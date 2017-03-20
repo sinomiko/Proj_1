@@ -1,0 +1,19 @@
+/*************************************************************************
+	> File Name: main.cpp
+	> Author: Miko Song
+	> Mail: mikosong2013@gmail.com 
+	> Created Time: Sun 19 Mar 2017 10:59:52 PM PDT
+ ************************************************************************/
+
+#include<iostream>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+   std::string s;
+   int ss = new int(1);
+   cout<<*ss<<endl;
+}
