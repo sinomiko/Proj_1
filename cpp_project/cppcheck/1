@@ -15,6 +15,6 @@ int main()
 {
    std::string s;
    int *ss=new int(1);
-   cout<< reinterpret_cast<int> (*ss)<<endl;
+   cout<< reinterpret_cast<long> (*ss)<<endl;
    cout<<ss<<endl;
 }
