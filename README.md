@@ -1,2 +1,11 @@
 # miko's project
-Notes of my project
+
+## c plus plus code
+
+## django project
+
+## javascript code
+
+## python code
+
+## shell script
