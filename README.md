@@ -29,7 +29,7 @@ scons
 
 ```
 
-### how to use google test running the tests 
+### How to use google test running the test 
 
 Either using `make test`:
 ```
