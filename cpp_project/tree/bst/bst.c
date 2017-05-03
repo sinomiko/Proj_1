@@ -198,5 +198,7 @@ int main(void)
          printf("isBst correct \n");
     else
          printf("isBst wrong \n");
+    mirror(&root);
+    preOrderTraversal(root);
     return 0;       
 }
