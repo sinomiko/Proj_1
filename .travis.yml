@@ -24,12 +24,12 @@ before_install:
   - pip install --user cpp-coveralls
 
 before_script: 
-  - cd cpp_project/hello 
+  - cd cpp_project/compile-skills/scons-demo/
 
 script: 
-#hello
+#scons-demo
   - scons
-#gtest
+#gtest-demo
   - cd ..
   - mkdir build
   - cd build

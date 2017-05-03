@@ -1,0 +1,4 @@
+[submodule "cpp_project/gtest-demo/external/googletest"]
+    path = cpp_project/gtest-demo/external/googletest
+    url = https://github.com/google/googletest.git
+
