@@ -14,8 +14,6 @@ addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
-      
-
 
 # Change this to your needs
 # script: ./configure &amp;&amp; make
@@ -29,16 +27,15 @@ before_script:
 script: 
 #scons-demo
   - scons
+  - ./hello
 #gtest-demo
-  - cd ..
+  - cd ../../gtest-demo/
   - mkdir build
   - cd build
   - cmake ..
   - make
-  - ./unit_tests
-
 after_script:
-  - ./hello
+  - ./unit_tests
 
 after_success:
   - coveralls --root .. -E ".*external.*" -E ".*CMakeFiles.*" -E ".*test/.*.cpp.*"
