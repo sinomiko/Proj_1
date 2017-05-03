@@ -1,0 +1,9 @@
+language: cpp
+compiler:
+  - gcc
+  - clang
+# Change this to your needs
+# script: ./configure &amp;&amp; make
+before_script: 
+  - cd cpp_project/hello 
+script: scons

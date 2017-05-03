@@ -1,1 +1,4 @@
-Program('hello', ['hello.cpp', 'main.cpp'])
+Program('hello', ['hello.cpp', 'main.cpp'],
+         LIBS='m',
+         LIBPATH = ['/usr/lib', '/usr/local/lib'],
+         CCFLAGS = '-DHELLOSCONS' )
