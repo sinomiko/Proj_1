@@ -1,10 +1,10 @@
 # miko's project
 [![Build Status](https://travis-ci.org/sinomiko/project.svg?branch=master)](https://travis-ci.org/sinomiko/project)
-[![Coverage Status](https://coveralls.io/repos/bast/gtest-demo/badge.png?branch=master)](https://coveralls.io/r/bast/gtest-demo?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/sinomiko/project/badge.svg?branch=master)](https://coveralls.io/github/sinomiko/project?branch=master)
 [![License](https://img.shields.io/badge/license-%20BSD--3-blue.svg)](../master/LICENSE)
 
 
-# gtest-demo
+# Demo
 
 C/C++ unit test demo using [Google Test](https://code.google.com/p/googletest) deployed to
 [Travis-CI](https://travis-ci.org/sinomiko/project/builds) with test coverage
