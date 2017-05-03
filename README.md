@@ -29,15 +29,7 @@ scons
 
 ```
 
-## django project
-
-## javascript code
-
-## python code
-
-## shell script
-
-## Running the tests (ongoing)
+### how to use google test running the tests 
 
 Either using `make test`:
 ```
@@ -71,6 +63,17 @@ $ ./unit_tests
 [  PASSED  ] 2 tests.
 
 ```
+
+
+## django project
+
+## javascript code
+
+## python code
+
+## shell script
+
+
 
 
 ## Acknowledgments
