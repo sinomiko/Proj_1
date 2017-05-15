@@ -12,6 +12,71 @@
 #include <unistd.h>
 #include <pthread.h>
 #include <sched.h>
+
+typedef pthread_mutex_t Mutex;
+
+typedef struct{
+    int counter;
+    Mutex *mutex;
+}Shared;
+
+void perror_exit(char * str){
+    perror(str);
+    exit(1);
+}
+
+void *check_malloc(int size){
+    void *p = malloc(size);
+    if(p == NULL){
+        perror("malloc failed");
+        exit(1);
+    }
+    return p;
+}
+
+Mutex *make_mutex(){
+    Mutex *mutex=check_malloc(sizeof(Mutex));
+    int n = pthread_mutex_init(mutex,NULL);
+    if(n!=0) perror_exit("make_mutex failed");
+    return mutex;
+}
+
+void mutex_lock(Mutex *mutex){
+    int n = pthread_mutex_lock(mutex);
+    if(n!=0)perror_exit("mutex_lock failed");
+}
+
+void mutex_unlock(Mutex *mutex){
+    int n = pthread_mutex_unlock(mutex);
+    if(n!=0)perror_exit("mutex_unlock failed");
+}
+
+pthread_t make_thread(void*(*entry)(void *), Shared *shared)
+{
+    int n;
+    pthread_t thread;
+    n = pthread_create(&thread, NULL, entry, (void *)shared);
+    if(n!=0){
+        perror("pthread_create failed");
+        exit(0);
+    }
+    return thread;
+}
+
+Shared *make_shared(int val){
+    Shared *shared = check_malloc(sizeof(Shared));
+    shared->counter = val;
+    shared->mutex = make_mutex();
+    return shared;
+}
+
+void child_code(Shared * shared){
+    mutex_lock(shared->mutex);
+    printf("counter = %d \n", shared->counter);
+    shared->counter++;
+    mutex_unlock(shared->mutex);
+}
+
 void *myfun(void *arg)
 {
     cpu_set_t mask;
@@ -44,13 +109,35 @@ void *myfun(void *arg)
     pthread_exit(NULL);
 }
 
+void join_thread(pthread_t thread){
+    int ret = pthread_join(thread, NULL);
+    if (ret == -1) {
+        perror("pthread_join failed");
+        exit(-1);
+    }
+}
+#define NUM_CHILDREN 200
+void * (*entry)(void*);
 int main(int argc, char *argv[])
 {
-    pthread_t tid;
-    if (pthread_create(&tid, NULL, (void *)myfun, NULL) != 0) {
-        fprintf(stderr, "thread create failed\n");
-        return -1;
+//    pthread_t tid;
+//    if (pthread_create(&tid, NULL, (void *)myfun, NULL) != 0) {
+//        fprintf(stderr, "thread create failed\n");
+//        return -1;
+//    }
+//    pthread_join(tid, NULL);
+    pthread_t child[NUM_CHILDREN];
+    Shared *shared = make_shared(1000);
+
+    entry = &child_code;
+    int i;
+    for(i=0; i<NUM_CHILDREN; i++){
+        child[i]=make_thread(entry,shared);
     }
-    pthread_join(tid, NULL);
+
+    for (i=0; i<NUM_CHILDREN; i++) {
+        join_thread(child[i]);
+    }
     return 0;
+    
 }
