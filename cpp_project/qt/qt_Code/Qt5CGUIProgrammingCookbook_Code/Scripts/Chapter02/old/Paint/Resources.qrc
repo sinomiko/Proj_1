@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/Images">
+        <file>green-grass-texture.png</file>
+    </qresource>
+</RCC>
