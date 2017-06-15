@@ -76,7 +76,6 @@ $ ./unit_tests
 
 
 
-
 ## Acknowledgments
 
 Container Travis setup thanks to [Joan Massich](https://github.com/massich).
