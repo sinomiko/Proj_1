@@ -40,13 +40,16 @@ after_script:
 after_success:
   - coveralls --root .. -E ".*external.*" -E ".*CMakeFiles.*" -E ".*test/.*.cpp.*"
 
+before_deploy: "echo 'ready?'"
+
 deploy:
   provider: releases
   api_key: System.getenv("key")
-  file: "cpp_project/compile-skills/scons-demo/hello"
+  file: "../../scons-demo/hello"
   skip_cleanup: true
   on:
     tags: true
+
 
 branches:
   only:
