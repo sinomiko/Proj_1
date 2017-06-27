@@ -1,20 +1,27 @@
-#include<memory>    //std::auto_ptr
-#include<functional>//std::function  std::bind  std::placeholders
-#include <iostream> // std::cout
-#include <utility>  // std::move
-#include <vector>   // std::vector
-#include <array>    // std::array
-#include <string>   // std::string
-#include <algorithm>    // std::sort
+#include<memory>    //auto_ptr
+#include<functional>//function  bind  placeholders
+#include <iostream> // cout
+#include <utility>  // move
+
+#include <string>   // string
+
+#include <algorithm>    // sort
+
+#include <vector>   // vector
+#include <array>    // array
+#include <unordered_map>
+#include <map>
+#include <tuple>
+
 using namespace std;
 
 class A {
     public:
         int *pointer;
-        A():pointer(new int(1)) { std::cout << "construct "<< pointer << std::endl; }
-        A(const A& a):pointer(new int(*a.pointer)) { std::cout << "copy construct "<< pointer << std::endl; }    //
-        A(A&& a):pointer(a.pointer) { a.pointer = nullptr;std::cout << "move copy construct "<< pointer << std::endl; }
-        ~A(){ std::cout << "destructor " << pointer << std::endl; delete pointer; }
+        A():pointer(new int(1)) { cout << "construct "<< pointer << endl; }
+        A(const A& a):pointer(new int(*a.pointer)) { cout << "copy construct "<< pointer << endl; }    //
+        A(A&& a):pointer(a.pointer) { a.pointer = nullptr;cout << "move copy construct "<< pointer << endl; }
+        ~A(){ cout << "destructor " << pointer << endl; delete pointer; }
 };
 
 A return_rvalue(bool test) {
@@ -35,21 +42,21 @@ int bind_func(int x, int y, int z){
 }
 
 void reference(int& v) {
-        std::cout << "left value"<<std::endl;
+        cout << "left value"<<endl;
 }
 
 void reference(int&& v) {
-        std::cout << "right value"<<std::endl;
+        cout << "right value"<<endl;
 }
 
 template <typename T>
 void pass(T&& v) {
-    std::cout <<"comman parameter"<<endl;
+    cout <<"comman parameter"<<endl;
     reference(v);
-    std::cout << "std::move"<<endl;
-    reference(std::move(v));
-    std::cout << "std::forwaed"<<endl;
-    reference(std::forward<T>(v));
+    cout << "move"<<endl;
+    reference(move(v));
+    cout << "forwaed"<<endl;
+    reference(forward<T>(v));
 
 }
 
@@ -57,7 +64,42 @@ void funvp(int *p, int len) {
         return;
 }
 
+auto get_student(int id)-> decltype(make_tuple(0.8, 'A', "zhangsan"))
+{
+    if (id == 0)
+        return make_tuple(0.8, 'A', "zhangsan");
+    if (id == 1)
+        return make_tuple(1.8, 'B', "zhaosi");
+    if (id == 2)
+        return make_tuple(2.8, 'C', "wangwu");
+    if (id == 3)
+        return make_tuple(3.8, 'D', "zzhouliu");
+    return make_tuple(0.0, 'D', "null"); 
+}
 
+template <typename T>
+auto tuple_len(T &tpl) ->decltype(tuple_size<T>::value){
+    return tuple_size<T>::value;
+}
+
+template<typename T, typename ...Args>
+unique_ptr<T> make_unique( Args&& ...args ) {
+        return unique_ptr<T>( new T( forward<Args>(args)... ) );
+}
+
+template <typename T>
+void print(const T &t)
+{
+    cout << t<<endl;
+}
+
+
+template <typename T, typename...Args>
+void print(const T &t, const Args&...rest)
+{
+    cout << t << " ";   
+    print(rest...);      
+}
 
 int main(void){
     cout<<"begin"<<endl;
@@ -71,7 +113,7 @@ int main(void){
         cout<< x+9 <<endl;
     };
 
-    std::cout << "======= lambda    ==============================="<< std::endl;
+    cout << "======= lambda    ==============================="<< endl;
     cout<<"lambda out:"<<add(2,2)<<endl;
     foo(1);
     function<int(int)> bind_fu=bind(bind_func,placeholders::_1, 1,2);
@@ -80,35 +122,83 @@ int main(void){
     cout<<__func__<<endl; 
     cout<<"func1:"<<func1(10)<<"\nbind_fu:"<<bind_fu(2)<<endl;
      
-    std::cout << "=======return_rvalue==============================="<< std::endl;
+    cout << "=======return_rvalue==============================="<< endl;
     A obj = return_rvalue(false);
-    std::cout << "obj:" << std::endl;
-    std::cout << obj.pointer << std::endl;
-    std::cout << *obj.pointer << std::endl;
+    cout << "obj:" << endl;
+    cout << obj.pointer << endl;
+    cout << *obj.pointer << endl;
 
-    std::cout << "=======std::move=================================="<< std::endl;  
+    cout << "=======move=================================="<< endl;  
     A obj_a;
-    std::vector<A> v;
+    vector<A> v;
     //string obj_a = "Hello world.";
-    //std::vector<string> v;
-    std::cout << "obj_a: " << obj_a.pointer << std::endl;
+    //vector<string> v;
+    cout << "obj_a: " << obj_a.pointer << endl;
     v.push_back(obj_a);
-    std::cout <<"v.push_back(obj_a)" << "obj_a: " << obj_a.pointer << std::endl;
-    v.push_back(std::move(obj_a));
-    std::cout <<"v.push_back(std::move(obj_a))"<< "obj_a: " << obj_a.pointer << std::endl;
+    cout <<"v.push_back(obj_a)" << "obj_a: " << obj_a.pointer << endl;
+    v.push_back(move(obj_a));
+    cout <<"v.push_back(move(obj_a))"<< "obj_a: " << obj_a.pointer << endl;
 
-    std::cout << "=======forward=================================="<< std::endl;
-    std::cout << "right value begin"<<endl;
+    cout << "=======forward=================================="<< endl;
+    cout << "right value begin"<<endl;
     pass(1);
-    std::cout << "left value begin"<<endl;
+    cout << "left value begin"<<endl;
     int value = 1;
     pass(value);
-    std::cout << "=======end=================================="<< std::endl;
+    cout << "=======array=================================="<< endl;
 
     array<int, 4> arr = {1,2,3,4};
+
     funvp(&arr[0], arr.size());
     funvp(arr.data(), arr.size());
-    std::sort(arr.begin(), arr.end());
+    
+    sort(arr.begin(), arr.end());
+    cout << "=======map=================================="<< endl;
+    unordered_map<int, string> unorder_map = {
+        {1, "1"},
+        {3, "3"},
+        {2, "2"}
+    };
+
+    map<int, string> map1 = {
+        {1, "1"},
+        {3, "3"},
+        {2, "2"}
+    };
+
+    cout << "unordered_map" << endl;
+    
+    for( const auto & n : unorder_map) 
+        cout << "Key:[" << n.first << "] Value:[" << n.second << "]\n";
+
+    cout << endl;
+    cout << "map" << endl;
+    
+    for( const auto & n : map1) 
+        cout << "Key:[" << n.first << "] Value:[" << n.second << "]\n";
+
+    cout << "=======tuple=================================="<< endl;
+    auto student = get_student(0);
+    cout<<" "<<get<0>(student)<<" "<<get<1>(student)<<" "<<get<2>(student)<<endl;
+    
+    double gpa;
+    char grade;
+    string name;
+    tie(gpa, grade, name) = get_student(1);
+    cout<<" "<<gpa<<" "<<grade<<" "<<name<<endl;
+
+    tuple<double, char, string> t(3.8, 'D', "zzhouliu");
+    auto new_tuple = tuple_cat(get_student(1), move(t));
+    for( unsigned int i = 0; i != tuple_len(new_tuple); ++i)
+        cout <<get<1>(new_tuple) << endl;
+    
+    cout << "=======variable template parameter========================="<< endl;
+    print("string1", 2, 3.14f, "string2", 42);
+    
+    cout << "=======shared_ptr unique_ptr weak_ptr======================"<< endl;
+    unique_ptr<int> pointer = make_unique<int>(10); 
+    
+    cout << "=======map=================================="<< endl;
     return 0;
 
 }
