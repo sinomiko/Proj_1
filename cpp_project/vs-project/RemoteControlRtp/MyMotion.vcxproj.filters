@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="头文件\encoder">
+      <UniqueIdentifier>{63f4cf53-c01f-4750-bb1c-e0e3b1872935}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\decoder">
+      <UniqueIdentifier>{1e9da7bf-a81b-4b07-9ac0-5c6739ac4529}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\encoder">
+      <UniqueIdentifier>{64891fe3-0db0-48a6-960d-70e150e1f024}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\decoder">
+      <UniqueIdentifier>{65448f05-5e9e-4ea4-90e6-1102e91faf2f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="IngeniousException.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyMotion.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyMotionDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CvvImage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="encoder\coder.cpp">
+      <Filter>源文件\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="encoder\countbit.cpp">
+      <Filter>源文件\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="encoder\dct.cpp">
+      <Filter>源文件\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="encoder\Global.cpp">
+      <Filter>源文件\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="encoder\huffman.cpp">
+      <Filter>源文件\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="encoder\libr263.cpp">
+      <Filter>源文件\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="encoder\mot_est.cpp">
+      <Filter>源文件\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="encoder\pred.cpp">
+      <Filter>源文件\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="encoder\quant.cpp">
+      <Filter>源文件\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="encoder\rlib.cpp">
+      <Filter>源文件\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="encoder\stream.cpp">
+      <Filter>源文件\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="decoder\convert.cpp">
+      <Filter>源文件\decoder</Filter>
+    </ClCompile>
+    <ClCompile Include="decoder\DGlobal.cpp">
+      <Filter>源文件\decoder</Filter>
+    </ClCompile>
+    <ClCompile Include="decoder\GetBits.cpp">
+      <Filter>源文件\decoder</Filter>
+    </ClCompile>
+    <ClCompile Include="decoder\GetBlk.cpp">
+      <Filter>源文件\decoder</Filter>
+    </ClCompile>
+    <ClCompile Include="decoder\GetHdr.cpp">
+      <Filter>源文件\decoder</Filter>
+    </ClCompile>
+    <ClCompile Include="decoder\GetPic.cpp">
+      <Filter>源文件\decoder</Filter>
+    </ClCompile>
+    <ClCompile Include="decoder\GetVlc.cpp">
+      <Filter>源文件\decoder</Filter>
+    </ClCompile>
+    <ClCompile Include="decoder\Idct.cpp">
+      <Filter>源文件\decoder</Filter>
+    </ClCompile>
+    <ClCompile Include="decoder\Idctref.cpp">
+      <Filter>源文件\decoder</Filter>
+    </ClCompile>
+    <ClCompile Include="decoder\Indices.cpp">
+      <Filter>源文件\decoder</Filter>
+    </ClCompile>
+    <ClCompile Include="decoder\Recon.cpp">
+      <Filter>源文件\decoder</Filter>
+    </ClCompile>
+    <ClCompile Include="decoder\Sac.cpp">
+      <Filter>源文件\decoder</Filter>
+    </ClCompile>
+    <ClCompile Include="decoder\Sactbls.cpp">
+      <Filter>源文件\decoder</Filter>
+    </ClCompile>
+    <ClCompile Include="decoder\Tmndec.cpp">
+      <Filter>源文件\decoder</Filter>
+    </ClCompile>
+    <ClCompile Include="decoder\YuvToRgb.cpp">
+      <Filter>源文件\decoder</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IngeniousException.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="matlib.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyMotion.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyMotionDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CvvImage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="encoder\coder.h">
+      <Filter>头文件\encoder</Filter>
+    </ClInclude>
+    <ClInclude Include="encoder\config.h">
+      <Filter>头文件\encoder</Filter>
+    </ClInclude>
+    <ClInclude Include="encoder\countbit.h">
+      <Filter>头文件\encoder</Filter>
+    </ClInclude>
+    <ClInclude Include="encoder\ctables.h">
+      <Filter>头文件\encoder</Filter>
+    </ClInclude>
+    <ClInclude Include="encoder\dct.h">
+      <Filter>头文件\encoder</Filter>
+    </ClInclude>
+    <ClInclude Include="encoder\def.h">
+      <Filter>头文件\encoder</Filter>
+    </ClInclude>
+    <ClInclude Include="encoder\Global.h">
+      <Filter>头文件\encoder</Filter>
+    </ClInclude>
+    <ClInclude Include="encoder\huffman.h">
+      <Filter>头文件\encoder</Filter>
+    </ClInclude>
+    <ClInclude Include="encoder\libr263.h">
+      <Filter>头文件\encoder</Filter>
+    </ClInclude>
+    <ClInclude Include="encoder\mot_est.h">
+      <Filter>头文件\encoder</Filter>
+    </ClInclude>
+    <ClInclude Include="encoder\owntypes.h">
+      <Filter>头文件\encoder</Filter>
+    </ClInclude>
+    <ClInclude Include="encoder\pred.h">
+      <Filter>头文件\encoder</Filter>
+    </ClInclude>
+    <ClInclude Include="encoder\quant.h">
+      <Filter>头文件\encoder</Filter>
+    </ClInclude>
+    <ClInclude Include="encoder\rlib.h">
+      <Filter>头文件\encoder</Filter>
+    </ClInclude>
+    <ClInclude Include="encoder\stream.h">
+      <Filter>头文件\encoder</Filter>
+    </ClInclude>
+    <ClInclude Include="encoder\struct.h">
+      <Filter>头文件\encoder</Filter>
+    </ClInclude>
+    <ClInclude Include="decoder\convert.h">
+      <Filter>头文件\decoder</Filter>
+    </ClInclude>
+    <ClInclude Include="decoder\decdef.h">
+      <Filter>头文件\decoder</Filter>
+    </ClInclude>
+    <ClInclude Include="decoder\decstruct.h">
+      <Filter>头文件\decoder</Filter>
+    </ClInclude>
+    <ClInclude Include="decoder\DGlobal.h">
+      <Filter>头文件\decoder</Filter>
+    </ClInclude>
+    <ClInclude Include="decoder\GetBits.h">
+      <Filter>头文件\decoder</Filter>
+    </ClInclude>
+    <ClInclude Include="decoder\GetBlk.h">
+      <Filter>头文件\decoder</Filter>
+    </ClInclude>
+    <ClInclude Include="decoder\GetHdr.h">
+      <Filter>头文件\decoder</Filter>
+    </ClInclude>
+    <ClInclude Include="decoder\GetPic.h">
+      <Filter>头文件\decoder</Filter>
+    </ClInclude>
+    <ClInclude Include="decoder\GetVlc.h">
+      <Filter>头文件\decoder</Filter>
+    </ClInclude>
+    <ClInclude Include="decoder\Idct.h">
+      <Filter>头文件\decoder</Filter>
+    </ClInclude>
+    <ClInclude Include="decoder\Idctref.h">
+      <Filter>头文件\decoder</Filter>
+    </ClInclude>
+    <ClInclude Include="decoder\Indices.h">
+      <Filter>头文件\decoder</Filter>
+    </ClInclude>
+    <ClInclude Include="decoder\Recon.h">
+      <Filter>头文件\decoder</Filter>
+    </ClInclude>
+    <ClInclude Include="decoder\Sac.h">
+      <Filter>头文件\decoder</Filter>
+    </ClInclude>
+    <ClInclude Include="decoder\Sactbls.h">
+      <Filter>头文件\decoder</Filter>
+    </ClInclude>
+    <ClInclude Include="decoder\Tmndec.h">
+      <Filter>头文件\decoder</Filter>
+    </ClInclude>
+    <ClInclude Include="header_rtph263.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MyMotion.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\MyMotion.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MyMotion.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="res\MyMotion.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="v4501v.lib" />
+  </ItemGroup>
+</Project>

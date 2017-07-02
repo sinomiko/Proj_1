@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{932D762F-5495-40C6-BB27-AAACE4184468}</ProjectGuid>
+    <Keyword>MFCProj</Keyword>
+    <ProjectName>BasicMotion</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\temp\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\USST\MTSoft\Common\Bin;$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>MTSystem.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>./temp/MyMotion/MyMotion.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CvvImage.cpp" />
+    <ClCompile Include="decoder\convert.cpp" />
+    <ClCompile Include="decoder\DGlobal.cpp" />
+    <ClCompile Include="decoder\GetBits.cpp" />
+    <ClCompile Include="decoder\GetBlk.cpp" />
+    <ClCompile Include="decoder\GetHdr.cpp" />
+    <ClCompile Include="decoder\GetPic.cpp" />
+    <ClCompile Include="decoder\GetVlc.cpp" />
+    <ClCompile Include="decoder\Idct.cpp" />
+    <ClCompile Include="decoder\Idctref.cpp" />
+    <ClCompile Include="decoder\Indices.cpp" />
+    <ClCompile Include="decoder\Recon.cpp" />
+    <ClCompile Include="decoder\Sac.cpp" />
+    <ClCompile Include="decoder\Sactbls.cpp" />
+    <ClCompile Include="decoder\Tmndec.cpp" />
+    <ClCompile Include="decoder\YuvToRgb.cpp" />
+    <ClCompile Include="encoder\coder.cpp" />
+    <ClCompile Include="encoder\countbit.cpp" />
+    <ClCompile Include="encoder\dct.cpp" />
+    <ClCompile Include="encoder\Global.cpp" />
+    <ClCompile Include="encoder\huffman.cpp" />
+    <ClCompile Include="encoder\libr263.cpp" />
+    <ClCompile Include="encoder\mot_est.cpp" />
+    <ClCompile Include="encoder\pred.cpp" />
+    <ClCompile Include="encoder\quant.cpp" />
+    <ClCompile Include="encoder\rlib.cpp" />
+    <ClCompile Include="encoder\stream.cpp" />
+    <ClCompile Include="IngeniousException.cpp" />
+    <ClCompile Include="MyMotion.cpp" />
+    <ClCompile Include="MyMotionDlg.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CvvImage.h" />
+    <ClInclude Include="decoder\convert.h" />
+    <ClInclude Include="decoder\decdef.h" />
+    <ClInclude Include="decoder\decstruct.h" />
+    <ClInclude Include="decoder\DGlobal.h" />
+    <ClInclude Include="decoder\GetBits.h" />
+    <ClInclude Include="decoder\GetBlk.h" />
+    <ClInclude Include="decoder\GetHdr.h" />
+    <ClInclude Include="decoder\GetPic.h" />
+    <ClInclude Include="decoder\GetVlc.h" />
+    <ClInclude Include="decoder\Idct.h" />
+    <ClInclude Include="decoder\Idctref.h" />
+    <ClInclude Include="decoder\Indices.h" />
+    <ClInclude Include="decoder\Recon.h" />
+    <ClInclude Include="decoder\Sac.h" />
+    <ClInclude Include="decoder\Sactbls.h" />
+    <ClInclude Include="decoder\Tmndec.h" />
+    <ClInclude Include="encoder\coder.h" />
+    <ClInclude Include="encoder\config.h" />
+    <ClInclude Include="encoder\countbit.h" />
+    <ClInclude Include="encoder\ctables.h" />
+    <ClInclude Include="encoder\dct.h" />
+    <ClInclude Include="encoder\def.h" />
+    <ClInclude Include="encoder\Global.h" />
+    <ClInclude Include="encoder\huffman.h" />
+    <ClInclude Include="encoder\libr263.h" />
+    <ClInclude Include="encoder\mot_est.h" />
+    <ClInclude Include="encoder\owntypes.h" />
+    <ClInclude Include="encoder\pred.h" />
+    <ClInclude Include="encoder\quant.h" />
+    <ClInclude Include="encoder\rlib.h" />
+    <ClInclude Include="encoder\stream.h" />
+    <ClInclude Include="encoder\struct.h" />
+    <ClInclude Include="header_rtph263.h" />
+    <ClInclude Include="IngeniousException.h" />
+    <ClInclude Include="matlib.h" />
+    <ClInclude Include="MyMotion.h" />
+    <ClInclude Include="MyMotionDlg.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MyMotion.ico" />
+    <None Include="res\MyMotion.rc2" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MyMotion.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="res\MyMotion.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="v4501v.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="MyMotion.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

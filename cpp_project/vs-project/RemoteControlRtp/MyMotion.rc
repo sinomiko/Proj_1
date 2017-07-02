@@ -1,0 +1,310 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(简体，中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\MyMotion.rc2""  // 非 Microsoft Visual C++ 编辑过的资源\r\n"
+    "#include ""afxres.rc""         // 标准组件\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\MyMotion.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 MyMotion"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "MyMotion Version 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2007",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,16,WS_GROUP
+END
+
+IDD_MYMOTION_DIALOG DIALOGEX 0, 0, 719, 306
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "RemoteSurveillance"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "前进",IDC_FORWARD,599,265,28,10
+    PUSHBUTTON      "后退",IDC_BACKWARD,602,286,24,11
+    PUSHBUTTON      "左转",IDC_LEFT,573,275,25,11
+    PUSHBUTTON      "右转",IDC_RIGHT,628,275,28,11
+    PUSHBUTTON      "停止",IDC_STOP,599,276,28,10
+    GROUPBOX        "模式选择",IDC_STATIC,14,7,76,132
+    GROUPBOX        "左轮参数",IDC_STATIC,238,8,111,134
+    LTEXT           "左轮的速度",IDC_STATIC,242,26,38,10
+    EDITTEXT        IDC_LEFTSPEED,281,23,40,15,ES_AUTOHSCROLL
+    LTEXT           "左轮Kp",IDC_STATIC,242,43,38,10
+    LTEXT           "左轮Ki",IDC_STATIC,242,62,38,10
+    LTEXT           "左轮Kd",IDC_STATIC,242,79,38,10
+    LTEXT           "左轮加速度",IDC_STATIC,242,98,38,10
+    LTEXT           "左轮位移",IDC_STATIC,242,115,38,10
+    EDITTEXT        IDC_LKP,281,41,40,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_LKI,281,60,40,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_LKD,281,79,40,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_LA,281,99,40,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_LS,281,117,40,15,ES_AUTOHSCROLL
+    GROUPBOX        "右轮参数",IDC_STATIC,350,8,118,134
+    LTEXT           "右轮的速度",IDC_STATIC,355,23,36,10
+    LTEXT           "右轮Kp",IDC_STATIC,355,40,38,10
+    LTEXT           "右轮Ki",IDC_STATIC,355,59,38,10
+    LTEXT           "右轮Kd",IDC_STATIC,355,76,38,10
+    LTEXT           "右轮加速度",IDC_STATIC,355,95,34,10
+    LTEXT           "右轮位移",IDC_STATIC,355,112,38,10
+    EDITTEXT        IDC_RIGHTSPEED,395,21,40,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_RKP,395,39,40,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_RKI,395,58,40,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_RKD,395,77,40,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_RA,395,97,40,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_RS,395,115,40,15,ES_AUTOHSCROLL
+    LTEXT           "m/s",IDC_STATIC,324,23,20,15
+    LTEXT           "m/s^2",IDC_STATIC,324,101,23,15
+    LTEXT           "m",IDC_STATIC,325,117,19,13
+    LTEXT           "m/s",IDC_STATIC,438,22,20,15
+    LTEXT           "m/s^2",IDC_STATIC,438,100,23,15
+    LTEXT           "m",IDC_STATIC,439,116,19,13
+    CONTROL         "速度闭环",IDC_CHECK_VELOCITY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,25,64,13
+    CONTROL         "位置闭环",IDC_CHECK_POSITION,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,48,64,13
+    CONTROL         "协调控制",IDC_CHECK_CORRESPOND,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,71,64,13
+    CONTROL         "保存PID参数",IDC_CHECK_SAVEPID,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,95,64,13
+    GROUPBOX        "PID调节",IDC_STATIC,94,9,141,133
+    CONTROL         "默认PID",IDC_CHECK_PID,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,102,22,49,14
+    CONTROL         "在线调试PID",IDC_CHECK_DEBUGPID,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,102,43,49,14
+    CONTROL         "LoadPID",IDC_CHECK_LOADPID,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,103,64,49,14
+    PUSHBUTTON      "保存PID参数",IDC_BUTTON_SAVEPID,24,114,59,21
+    PUSHBUTTON      "查看PID值",IDC_BUTTON_LOOK,130,7,64,14
+    GROUPBOX        "上次保存的PID值",IDC_STATIC,101,82,131,56
+    LTEXT           "左轮P",IDC_STATIC_LP,105,95,56,11
+    LTEXT           "左轮I",IDC_STATIC_LI,105,109,56,11
+    LTEXT           "左轮D",IDC_STATIC_LD,105,123,55,11
+    LTEXT           "右轮P",IDC_STATIC_RP,164,94,61,11
+    LTEXT           "右轮I",IDC_STATIC_RI,164,108,61,11
+    LTEXT           "右轮D",IDC_STATIC_RD,164,122,61,11
+    GROUPBOX        "码盘信息",IDC_STATIC,15,142,80,86
+    LTEXT           "左轮速",IDC_STATIC,22,156,22,8
+    LTEXT           "右轮速",IDC_STATIC,21,170,24,9
+    LTEXT           "左轮位移",IDC_STATIC,18,184,28,10
+    LTEXT           "右轮位移",IDC_STATIC,18,198,29,9
+    LTEXT           "时间",IDC_STATIC,21,211,19,10
+    LTEXT           "m/s",IDC_STATIC,79,156,12,8
+    LTEXT           "m/s",IDC_STATIC,79,170,12,8
+    LTEXT           "m",IDC_STATIC,79,184,8,8
+    LTEXT           "m",IDC_STATIC,79,200,8,8
+    LTEXT           "s",IDC_STATIC,79,212,8,8
+    GROUPBOX        "码盘相对位移",IDC_STATIC,16,228,78,64
+    LTEXT           "左轮",IDC_STATIC,25,241,16,11
+    LTEXT           "右轮",IDC_STATIC,24,252,16,11
+    LTEXT           "ｘ轴",IDC_STATIC,25,263,16,11
+    LTEXT           "ｙ轴",IDC_STATIC,24,277,16,11
+    EDITTEXT        IDC_EDIT_LDIS,51,238,27,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_RDIS,51,251,27,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_XDIS,51,263,27,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_YDIS,51,278,27,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_V1,44,153,34,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_V2,44,168,34,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_D1,45,183,34,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_D2,45,198,34,12,ES_AUTOHSCROLL | ES_READONLY
+    GROUPBOX        "方向",IDC_STATIC,571,259,87,40
+    PUSHBUTTON      "Remote Control",IDC_BtnRC,494,59,201,14
+    EDITTEXT        IDC_EdtIP,564,17,139,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EdtRe,571,79,134,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EdtImg,569,98,137,14,ES_AUTOHSCROLL
+    LTEXT           "Command Received",IDC_STATIC,481,82,62,8
+    LTEXT           "Video Status",IDC_STATIC,483,100,41,8
+    PUSHBUTTON      "Server IP",IDC_BtnIP,476,17,74,14
+    CONTROL         "",IDC_STATIC_PIC,"Static",SS_BLACKFRAME,312,173,186,112
+    LTEXT           "Client IP",IDC_STATIC,481,37,64,12
+    EDITTEXT        IDC_ClientIP,562,37,143,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PSD_F,570,144,34,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_PSD_B,569,223,34,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_PSD_FL,564,163,34,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_PSD_FR,613,163,34,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_PSD_L,546,194,34,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_PSD_R,627,195,34,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "PSD-F",IDC_STATIC,576,134,19,8
+    LTEXT           "PSD-B",IDC_STATIC,573,239,20,8
+    LTEXT           "PSD-FL",IDC_STATIC,535,163,23,8
+    LTEXT           "PSD-FR",IDC_STATIC,650,164,23,8
+    LTEXT           "PSD-L",IDC_STATIC,509,194,19,8
+    LTEXT           "PSD-R",IDC_STATIC,667,195,20,8
+    EDITTEXT        IDC_EDIT_UltraSonic_FL,564,179,34,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_UltraSonic_FR,613,179,34,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "UltraSonic-FL",IDC_STATIC,518,180,41,8
+    LTEXT           "UltraSonic-FR",IDC_STATIC,650,180,42,8
+    EDITTEXT        IDC_EDIT_UltraSonic_L,546,207,34,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_UltraSonic_R,627,208,34,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "UltraSonic-L",IDC_STATIC,508,208,38,8
+    LTEXT           "UltraSonic-R",IDC_STATIC,668,207,38,8
+    EDITTEXT        IDC_EDIT_UltraSonic_F,611,144,34,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "UltraSonic-F",IDC_STATIC,612,134,38,8
+    EDITTEXT        IDC_EDIT_UltraSonic_B,610,223,34,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "UltraSonic-B",IDC_STATIC,611,239,38,8
+    GROUPBOX        "UltraSonic/PSD",IDC_STATIC,507,126,206,127
+    GROUPBOX        "RemoteService",IDC_STATIC,475,7,238,115
+    CONTROL         "",IDC_STATIC_PIC2,"Static",SS_BLACKFRAME,112,173,186,112
+    GROUPBOX        "Video Sending                                                                    Video Received",IDC_STATIC,108,154,396,145
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "CompanyName", "TODO: <公司名>"
+            VALUE "FileDescription", "TODO: <文件说明>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "MyMotion.exe"
+            VALUE "LegalCopyright", "TODO: (C) <公司名>。保留所有权利。"
+            VALUE "OriginalFilename", "MyMotion.exe"
+            VALUE "ProductName", "TODO: <产品名>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "翻译", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_MYMOTION_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 713
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 299
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_ABOUTBOX            "关于 MyMotion(&A)..."
+END
+
+#endif    // 中文(简体，中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\MyMotion.rc2"  // 非 Microsoft Visual C++ 编辑过的资源
+#include "afxres.rc"         // 标准组件
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
