@@ -35,7 +35,7 @@ proguard/
 
 # Log Files
 *.log
-
+*.tlog
 ######################
 # 解决java产生文件
 ######################
@@ -125,6 +125,10 @@ crashlytics-build.properties
 *.slo
 *.lo
 *.o
+*.obj
+*.pdb
+*.idb
+*.obj
 # Precompiled Headers
 *.gch
 *.pch
