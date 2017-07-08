@@ -6,7 +6,9 @@ public:
 	MyType(int a, int b) :m_a(a), m_b(b) {
 		cout << "constructor with parameters" << endl;
 	}
-
+	int operator >(const MyType &mt){ 
+		return 0;;
+	}
 	bool operator<(const MyType &a) const{
 		if (m_a < a.m_a)
 		{

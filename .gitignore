@@ -153,3 +153,7 @@ crashlytics-build.properties
 *.out
 *.app
 
+*.opendb
+*.db
+*.suo
+*.ipch
