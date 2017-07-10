@@ -2,3 +2,10 @@
     path = cpp_project/gtest-demo/external/googletest
     url = https://github.com/google/googletest.git
 
+[submodule "cpp_project/logger/log4cpp/log4cpp-codegit"]
+    path = cpp_project/logger/log4cpp/log4cpp-codegit
+    url = https://git.code.sf.net/p/log4cpp/codegit
+
+[submodule "cpp_project/logger/tacopie/tacopie"]
+    path = cpp_project/logger/tacopie/tacopie
+    url = https://github.com/Cylix/tacopie.git
