@@ -15,6 +15,15 @@
 
 using namespace std;
 
+class View
+{
+public:
+    void onClick(int x, int y)
+    {
+        cout << "X : " << x << ", Y : " << y << endl;
+    }
+};
+
 class A {
     public:
         int *pointer;
@@ -123,6 +132,7 @@ void fillVector(vector<int>& v)
 	//WARNING: this is not thread-safe and is shown for illustration only  
 }
 
+function<void(View, int, int)> clickCallback;
 
 int main(void){
     cout<<"begin"<<endl;
@@ -145,6 +155,11 @@ int main(void){
     cout<<__func__<<endl; 
     cout<<"func1:"<<func1(10)<<"\nbind_fu:"<<bind_fu(2)<<endl;
      
+    cout << "=======bind================================="<< endl;
+    View button;
+    clickCallback = &View::onClick;
+    clickCallback(button, 10, 123);
+
     cout << "=======return_rvalue==============================="<< endl;
     A obj = return_rvalue(false);
     cout << "obj:" << endl;
@@ -218,11 +233,13 @@ int main(void){
     cout << "=======variable template parameter========================="<< endl;
     print("string1", 2, 3.14f, "string2", 42);
     
+    /*
     cout << "=======shared_ptr unique_ptr weak_ptr======================"<< endl;
     unique_ptr<int> pointer = make_unique<int>(10); 
     
     cout << "=======map=================================="<< endl;
-/*
+    */
+    /*
 	// The number of elements in the vector.  
 	const int elementCount = 9;
 
