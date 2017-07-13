@@ -1,5 +1,4 @@
-#include <Winsock2.h>
-
+#include <winsock2.h>
 #include <fcntl.h>
 #include <iostream>
 
@@ -16,7 +15,7 @@ self_pipe::self_pipe(void)
 	m_fd = ::socket(AF_INET, SOCK_DGRAM, 0);
 	if (m_fd == __MC_INVALID_FD) { __MC_THROW(error, "fail socket()"); }
 
-	u_long flags = 1;
+	unsigned long flags = 1;
 	ioctlsocket(m_fd, FIONBIO, &flags);
 
 	//! Bind server to localhost

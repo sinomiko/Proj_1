@@ -8,50 +8,50 @@
 //! should be inherited by any class intended to be used for logging
 class logger_iface {
 public:
-	//! ctor & dtor
-	logger_iface(void) = default;
-	virtual ~logger_iface(void) = default;
+    //! ctor & dtor
+    logger_iface(void) = default;
+    virtual ~logger_iface(void) = default;
 
-	//! copy ctor & assignment operator
-	logger_iface(const logger_iface&) = default;
-	logger_iface& operator=(const logger_iface&) = default;
+    //! copy ctor & assignment operator
+    logger_iface(const logger_iface&) = default;
+    logger_iface& operator=(const logger_iface&) = default;
 
 public:
-	virtual void debug(const std::string& msg, const std::string& file, std::size_t line) = 0;
-	virtual void info(const std::string& msg, const std::string& file, std::size_t line) = 0;
-	virtual void warn(const std::string& msg, const std::string& file, std::size_t line) = 0;
-	virtual void error(const std::string& msg, const std::string& file, std::size_t line) = 0;
+    virtual void debug(const std::string& msg, const std::string& file, std::size_t line) = 0;
+    virtual void info(const std::string& msg, const std::string& file, std::size_t line) = 0;
+    virtual void warn(const std::string& msg, const std::string& file, std::size_t line) = 0;
+    virtual void error(const std::string& msg, const std::string& file, std::size_t line) = 0;
 };
 
 //! default logger class provided by the library
 class logger : public logger_iface {
 public:
-	//! log level
-	enum class log_level {
-		error = 0,
-		warn = 1,
-		info = 2,
-		debug = 3
-	};
+    //! log level
+    enum class log_level {
+        error = 0,
+        warn = 1,
+        info = 2,
+        debug = 3
+    };
 
 public:
-	//! ctor & dtor
-	logger(log_level level = log_level::info);
-	~logger(void) = default;
+    //! ctor & dtor
+    logger(log_level level = log_level::info);
+    ~logger(void) = default;
 
-	//! copy ctor & assignment operator
-	logger(const logger&) = default;
-	logger& operator=(const logger&) = default;
+    //! copy ctor & assignment operator
+    logger(const logger&) = default;
+    logger& operator=(const logger&) = default;
 
 public:
-	void debug(const std::string& msg, const std::string& file, std::size_t line);
-	void info(const std::string& msg, const std::string& file, std::size_t line);
-	void warn(const std::string& msg, const std::string& file, std::size_t line);
-	void error(const std::string& msg, const std::string& file, std::size_t line);
+    void debug(const std::string& msg, const std::string& file, std::size_t line);
+    void info(const std::string& msg, const std::string& file, std::size_t line);
+    void warn(const std::string& msg, const std::string& file, std::size_t line);
+    void error(const std::string& msg, const std::string& file, std::size_t line);
 
 private:
-	log_level m_level;
-	std::mutex *m_mutex;
+    log_level m_level;
+    std::mutex *m_mutex;
 };
 
 //! variable containing the current logger
