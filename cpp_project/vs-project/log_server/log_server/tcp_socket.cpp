@@ -251,4 +251,3 @@ bool
 tcp_socket::operator!=(const tcp_socket& rhs) const {
 	return !operator==(rhs);
 }
-
