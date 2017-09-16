@@ -10,12 +10,14 @@ char**  test2(void) {
 	ptr[0] = (char*)malloc(5 * sizeof(char));
 	*ptr[0] = 'a';
 	*(ptr[0] + 1) = 'b';
-	ptr[0][2] = 'c';
+
+	*(*(ptr)+2) = 'c';
 	ptr[0][3] = 'd';
 	ptr[0][4] = '\0';
-	ptr[1] = (char*)malloc(2 * sizeof(char));
+	*(ptr+1)= (char*)malloc(2 * sizeof(char));
 	*ptr[1] = 'a';
-	*(ptr[1]+1) = '\0';
+	*(*(ptr+1)+1) = '\0';
+	
 	*(ptr+2) = (char*)malloc(2 * sizeof(char));
 	*ptr[2] = 'w';
 	*(ptr[2] + 1) = '\0';
