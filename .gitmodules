@@ -9,3 +9,7 @@
 [submodule "cpp_project/logger/tacopie/tacopie"]
     path = cpp_project/logger/tacopie/tacopie
     url = https://github.com/Cylix/tacopie.git
+    
+[submodule "python_project/tutorials]
+    path = python_project/tutorials
+    url = https://github.com/MorvanZhou/tutorials.git
