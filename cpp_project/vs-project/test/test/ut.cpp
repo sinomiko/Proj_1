@@ -72,6 +72,66 @@ int main(void)
     printf("B:a:%d\n", b.getMember());
     return 0;
 }
+
+/*
+#include <iostream>
+#include <list>
+using namespace std;
+std::list<int> mylist;
+
+void updateList(bool operation, int code, bool expire)
+{
+    if(!operation)
+    {
+        mylist.pop_front();
+    }
+    
+    if(expire)
+    {
+        mylist.remove(code);
+    }
+    else
+    {
+        mylist.push_back(code);
+    }
+    
+    if (mylist.empty())
+    { 
+        cout << " mylist is empty"<< endl;
+        return;
+    }
+    else
+    {
+        cout << " code: "<< code;
+        int curCode = mylist.front();
+        cout << " send curCode: "<< curCode<< endl;
+    }
+    
+  cout << "=== mylist contains:";
+  for (list<int>::iterator it=mylist.begin(); it!=mylist.end(); ++it)
+  {
+    cout << ' ' << *it;
+  }
+  cout << " ==="<<endl<<endl;
+}
+int main ()
+{
+
+  updateList(true, 1, false);
+  updateList(true, 2, false);
+  updateList(false, 1, false);
+  mylist.push_back(3);
+  updateList(false, 2, false);
+  updateList(false, 1, false);
+  updateList(false, 3, false);
+  updateList(false, 2, true);
+  updateList(false, 1, true);
+  updateList(false, 3, true);
+  
+  return 0;
+}
+*/
+
 /*output:
 
 A::vfun:2
