@@ -1,4 +1,4 @@
-build*/
+﻿build*/
 # Built application files
 *.apk
 *.ap_
@@ -153,6 +153,7 @@ crashlytics-build.properties
 *.out
 *.app
 
+*.sdf
 *.opendb
 *.db
 *.suo

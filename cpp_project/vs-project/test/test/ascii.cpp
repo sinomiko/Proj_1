@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 
+#include <windows.h>
 std::vector<std::string> shift_right(std::vector<std::string>& picture,
     std::string::size_type n = 4)
 {
@@ -12,7 +13,7 @@ std::vector<std::string> shift_right(std::vector<std::string>& picture,
     const char border = first[0];
     const std::string spaces(n, ' ');
 
-    for (std::string::size_type i = 1; i < (picture.size() - 1); ++i)
+    for (std::string::size_type i = 0; i < (picture.size() - 1); ++i)
         picture[i] = border + spaces + picture[i].substr(1, size - n - 2) + border;
 
     return picture;
@@ -27,6 +28,7 @@ void print(const std::vector<std::string>& picture)
 
 int main()
 {
+    //http://patorjk.com/software/taag/#p=testall&f=Graffiti&t=miko
     /*
     std::vector<std::string> picture =
     {
@@ -56,6 +58,10 @@ int main()
        
     print(picture);                                                                                                                      
 
-    for (int i = 0; i < 5; ++i) print(shift_right(picture, 8));
+    for (int i = 0; i < 16; ++i)
+    {
+        Sleep(1000);
+        print(shift_right(picture, 8));
+    }
     return 0;
 }
