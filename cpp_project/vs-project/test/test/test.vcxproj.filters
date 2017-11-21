@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ascii.cpp">
+    <ClCompile Include="smartPtrDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

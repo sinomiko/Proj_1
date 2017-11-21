@@ -234,7 +234,7 @@ int main(void){
 	print("string1", 2, 3.14f, "string2", 42);
 	
 	list<int> la;
-	la.splice()
+	//la.splice;
 	/*
 	cout << "=======shared_ptr unique_ptr weak_ptr======================"<< endl;
 	unique_ptr<int> pointer = make_unique<int>(10); 
