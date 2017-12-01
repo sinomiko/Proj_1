@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="smartPtrDemo.cpp" />
+    <ClCompile Include="testConst.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{36D08557-79CB-4561-95A3-B7A8DC994378}</ProjectGuid>

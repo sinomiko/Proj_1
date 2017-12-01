@@ -51,7 +51,7 @@ public:
 
 private:
     log_level m_level;
-    std::mutex *m_mutex;
+    std::mutex m_mutex;
 };
 
 //! variable containing the current logger

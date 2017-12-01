@@ -92,10 +92,11 @@
     <ClCompile Include="log_server\io_service.cpp" />
     <ClCompile Include="log_server\logger.cpp" />
     <ClCompile Include="log_server\log_server.cpp" />
-    <ClCompile Include="log_server\main.cpp" />
     <ClCompile Include="log_server\self_pipe.cpp" />
     <ClCompile Include="log_server\tcp_client.cpp" />
+    <ClCompile Include="log_server\tcp_client_main.cpp" />
     <ClCompile Include="log_server\tcp_server.cpp" />
+    <ClCompile Include="log_server\tcp_server_main.cpp" />
     <ClCompile Include="log_server\tcp_socket.cpp" />
     <ClCompile Include="log_server\thread_pool.cpp" />
   </ItemGroup>
