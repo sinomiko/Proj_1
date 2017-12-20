@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="testConst.cpp">
+    <ClCompile Include="gerrit_service.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

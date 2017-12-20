@@ -10,6 +10,31 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="log_server\Example\logger_main.cpp" />
+    <ClCompile Include="log_server\Example\tcp_client_main.cpp" />
+    <ClCompile Include="log_server\Example\tcp_server_main.cpp" />
+    <ClCompile Include="log_server\Sources\Network\io_service.cpp" />
+    <ClCompile Include="log_server\Sources\Network\tcp_client.cpp" />
+    <ClCompile Include="log_server\Sources\Network\tcp_server.cpp" />
+    <ClCompile Include="log_server\Sources\Network\Windows\self_pipe.cpp" />
+    <ClCompile Include="log_server\Sources\Network\Windows\tcp_socket.cpp" />
+    <ClCompile Include="log_server\Sources\Utils\error.cpp" />
+    <ClCompile Include="log_server\Sources\Utils\logger.cpp" />
+    <ClCompile Include="log_server\Sources\Utils\thread_pool.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="log_server\Include\header.h" />
+    <ClInclude Include="log_server\Include\Network\io_service.h" />
+    <ClInclude Include="log_server\Include\Network\self_pipe.h" />
+    <ClInclude Include="log_server\Include\Network\tcp_client.h" />
+    <ClInclude Include="log_server\Include\Network\tcp_server.h" />
+    <ClInclude Include="log_server\Include\Network\tcp_socket.h" />
+    <ClInclude Include="log_server\Include\Utils\error.h" />
+    <ClInclude Include="log_server\Include\Utils\logger.h" />
+    <ClInclude Include="log_server\Include\Utils\thread_pool.h" />
+    <ClInclude Include="log_server\Include\Utils\typedefs.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A2ABFB97-6787-4195-9185-7EDFD9E94880}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -44,6 +69,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>D:\development\project\cpp_project\vs-project\log_server\log_server;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -75,32 +101,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="log_server\error.h" />
-    <ClInclude Include="log_server\io_service.h" />
-    <ClInclude Include="log_server\logger.h" />
-    <ClInclude Include="log_server\log_server.h" />
-    <ClInclude Include="log_server\self_pipe.h" />
-    <ClInclude Include="log_server\tcp_client.h" />
-    <ClInclude Include="log_server\tcp_server.h" />
-    <ClInclude Include="log_server\tcp_socket.h" />
-    <ClInclude Include="log_server\thread_pool.h" />
-    <ClInclude Include="log_server\typedefs.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="log_server\error.cpp" />
-    <ClCompile Include="log_server\io_service.cpp" />
-    <ClCompile Include="log_server\logger.cpp" />
-    <ClCompile Include="log_server\logger_main.cpp" />
-    <ClCompile Include="log_server\log_server.cpp" />
-    <ClCompile Include="log_server\self_pipe.cpp" />
-    <ClCompile Include="log_server\tcp_client.cpp" />
-    <ClCompile Include="log_server\tcp_client_main.cpp" />
-    <ClCompile Include="log_server\tcp_server.cpp" />
-    <ClCompile Include="log_server\tcp_server_main.cpp" />
-    <ClCompile Include="log_server\tcp_socket.cpp" />
-    <ClCompile Include="log_server\thread_pool.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

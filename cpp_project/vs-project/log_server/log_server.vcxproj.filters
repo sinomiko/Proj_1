@@ -1,90 +1,102 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Utils">
-      <UniqueIdentifier>{eb26d6b5-e7b3-40b5-8557-47b767c56d80}</UniqueIdentifier>
+    <Filter Include="Include">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="example">
+    <Filter Include="Sources">
+      <UniqueIdentifier>{64b33393-6201-44b1-a093-5b66232edaa5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Examples">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Include\Network">
+      <UniqueIdentifier>{e1f8619c-41c5-4db7-8f5a-6e0f28c53087}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Utils">
+      <UniqueIdentifier>{7a341297-210b-4bdc-b7a8-50d9a48d5a5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Network">
+      <UniqueIdentifier>{352535be-6f3c-4ea4-96a4-b565228c14da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Utils">
+      <UniqueIdentifier>{396e728c-630f-4dbc-ad3b-eb8f149a57b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Network\Windows">
+      <UniqueIdentifier>{c04ea187-1103-4b26-95c9-cd43f6378470}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="log_server\error.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="log_server\io_service.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="log_server\log_server.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="log_server\logger.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="log_server\self_pipe.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="log_server\tcp_client.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="log_server\tcp_server.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="log_server\tcp_socket.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="log_server\thread_pool.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="log_server\typedefs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClCompile Include="log_server\Example\logger_main.cpp">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="log_server\Example\tcp_client_main.cpp">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="log_server\Example\tcp_server_main.cpp">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="log_server\Sources\Network\io_service.cpp">
+      <Filter>Sources\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="log_server\Sources\Network\tcp_client.cpp">
+      <Filter>Sources\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="log_server\Sources\Network\tcp_server.cpp">
+      <Filter>Sources\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="log_server\Sources\Network\Windows\self_pipe.cpp">
+      <Filter>Sources\Network\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="log_server\Sources\Network\Windows\tcp_socket.cpp">
+      <Filter>Sources\Network\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="log_server\Sources\Utils\error.cpp">
+      <Filter>Sources\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="log_server\Sources\Utils\logger.cpp">
+      <Filter>Sources\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="log_server\Sources\Utils\thread_pool.cpp">
+      <Filter>Sources\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="log_server\error.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="log_server\io_service.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="log_server\log_server.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="log_server\self_pipe.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="log_server\tcp_client.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="log_server\tcp_server.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="log_server\tcp_socket.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="log_server\thread_pool.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="log_server\tcp_client_main.cpp">
-      <Filter>example</Filter>
-    </ClCompile>
-    <ClCompile Include="log_server\tcp_server_main.cpp">
-      <Filter>example</Filter>
-    </ClCompile>
-    <ClCompile Include="log_server\logger.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="log_server\logger_main.cpp">
-      <Filter>example</Filter>
-    </ClCompile>
+    <ClInclude Include="log_server\Include\Network\io_service.h">
+      <Filter>Include\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="log_server\Include\Network\self_pipe.h">
+      <Filter>Include\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="log_server\Include\Network\tcp_client.h">
+      <Filter>Include\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="log_server\Include\Network\tcp_server.h">
+      <Filter>Include\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="log_server\Include\Network\tcp_socket.h">
+      <Filter>Include\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="log_server\Include\Utils\error.h">
+      <Filter>Include\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="log_server\Include\Utils\logger.h">
+      <Filter>Include\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="log_server\Include\Utils\thread_pool.h">
+      <Filter>Include\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="log_server\Include\Utils\typedefs.h">
+      <Filter>Include\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="log_server\Include\header.h">
+      <Filter>Include</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
