@@ -71,9 +71,23 @@ void testSharedtr()
 	testA->Add(2);
 	testA->Add(3);
 }
+
+template <typename T>
+class TD;
 int main()
 {
-	testPtrScope();
+	//testPtrScope();
 	//testSharedtr();
+	
+	const int theAnswer = 42;
+	auto x = theAnswer;
+	auto y = &theAnswer;
+
+// 	TD<decltype(x)> xType; // elicit errors containing
+// 	TD<decltype(y)> yType; // x's and y's types
+
+	std::cout << typeid(x).name() << '\n'; // display types for
+	std::cout << typeid(y).name() << '\n'; // x and y
+
 	return 0;
 }
