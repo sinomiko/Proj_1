@@ -15,16 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="logger.cpp">
+    <ClCompile Include="..\..\..\c11-project\nonPodCopy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="condtionVariableDemo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="logger.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

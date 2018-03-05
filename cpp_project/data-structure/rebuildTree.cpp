@@ -65,10 +65,12 @@ void PostOrderVisit(Node* pRoot)
 
 void RebuildTree(char* pPreOrder, char* pInOrder, int nTreeLen, Node** pRoot)
 {
+    //检查条件
 	if (pPreOrder == nullptr || pInOrder == nullptr)
 	{
 		return;
 	}
+    //设置根节点
 	Node* pTmp = new Node;
 	pTmp->value = *pPreOrder;
 	pTmp->Left = nullptr;
@@ -84,6 +86,7 @@ void RebuildTree(char* pPreOrder, char* pInOrder, int nTreeLen, Node** pRoot)
 		return;
 	}
 
+    //找出左子树长度，同理得到右子树长度
 	char* pOrgpInOrder = pInOrder;
 	char* pLeftEnd = pInOrder;
 	int nTmpLen = 0;
@@ -109,10 +112,12 @@ void RebuildTree(char* pPreOrder, char* pInOrder, int nTreeLen, Node** pRoot)
 	int nRightLen = 0;
 	nRightLen = nTreeLen - nTmpLen - 1;
 
+    //重构左子树
 	if (nleftLen>0)
 	{
 		RebuildTree(pPreOrder + 1, pInOrder, nleftLen, &((*pRoot)->Left));
 	}
+    //重构优子树
 	if (nRightLen>0)
 	{
 		RebuildTree(pPreOrder + nleftLen + 1, pInOrder + nleftLen + 1, nRightLen, &((*pRoot)->Right));
