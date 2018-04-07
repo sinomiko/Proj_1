@@ -1,4 +1,4 @@
-#include <memory> // and others
+﻿#include <memory> // and others
 #include <map>
 #include <iostream>
 using namespace std;
@@ -29,7 +29,8 @@ public:
 	~AA();
 
 private:
-	map<int, shared_ptr<BB>> testMap;
+	//map<int, weak_ptr<BB>> testMap;//no memory leak
+    map<int, shared_ptr<BB>> testMap;//memory leak
 };
 
 AA::AA()
@@ -77,17 +78,7 @@ class TD;
 int main()
 {
 	//testPtrScope();
-	//testSharedtr();
-	
-	const int theAnswer = 42;
-	auto x = theAnswer;
-	auto y = &theAnswer;
-
-// 	TD<decltype(x)> xType; // elicit errors containing
-// 	TD<decltype(y)> yType; // x's and y's types
-
-	std::cout << typeid(x).name() << '\n'; // display types for
-	std::cout << typeid(y).name() << '\n'; // x and y
-
+	testSharedtr();
+    getchar();
 	return 0;
 }

@@ -278,6 +278,7 @@ int main(void){
 	fillVector(v);
 	print("vector v after 2nd call to fillVector(): ", v);
 */
+    getchar();
 	return 0;
 
 }
