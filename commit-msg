@@ -1,0 +1,19 @@
+#!/bin/sh
+MSG="$1"
+check_Commit_MSG ()
+{
+	cat $MSG | grep -i -e FIX: -e ADD: -e RM: -e CHG: &>/dev/null &>/dev/null
+	if [ $? -ne 0 ]
+	then
+ 
+ 		echo -e "\n ERROR: Your message is not formatted correctly \n"
+		echo -e " The commit message should start by one of the following values"
+		echo -e " ADD: <text>"
+		echo -e " CHG: <text>"
+		echo -e " FIX: <text>"
+		echo -e " RM: <text>\n"
+		exit 1
+	fi	
+}
+
+check_Commit_MSG
