@@ -3,67 +3,67 @@
 #define  TREELEN 6
 using namespace std;
 
-struct Node
+struct TreeNode
 {
 	char value;
-	Node* Left;
-	Node* Right;
+	TreeNode* left;
+	TreeNode* right;
 };
 
-void PreOrderVisit(Node* pRoot)
+void PreOrderVisit(TreeNode* pRoot)
 {
 	if (pRoot==nullptr)
 	{
 		return;
 	}
 	cout << pRoot->value << "\t";
-	if (pRoot->Left)
+	if (pRoot->left)
 	{
-		PreOrderVisit(pRoot->Left);
+		PreOrderVisit(pRoot->left);
 	}
-	if (pRoot->Right)
+	if (pRoot->right)
 	{
-		PreOrderVisit(pRoot->Right);
+		PreOrderVisit(pRoot->right);
 	}
 }
 
-void InOrderVisit(Node* pRoot)
+void InOrderVisit(TreeNode* pRoot)
 {
 	if (pRoot == nullptr)
 	{
 		return;
 	}
 
-	if (pRoot->Left)
+	if (pRoot->left)
 	{
-		InOrderVisit(pRoot->Left);
+		InOrderVisit(pRoot->left);
 	}
 	cout << pRoot->value << "\t";
-	if (pRoot->Right)
+	if (pRoot->right)
 	{
-		InOrderVisit(pRoot->Right);
+		InOrderVisit(pRoot->right);
 	}
 }
 
-void PostOrderVisit(Node* pRoot)
+void PostOrderVisit(TreeNode* pRoot)
 {
 	if (pRoot == nullptr)
 	{
 		return;
 	}
 
-	if (pRoot->Left)
+	if (pRoot->left)
 	{
-		PostOrderVisit(pRoot->Left);
+		PostOrderVisit(pRoot->left);
 	}
-	if (pRoot->Right)
+	if (pRoot->right)
 	{
-		PostOrderVisit(pRoot->Right);
+		PostOrderVisit(pRoot->right);
 	}
 	cout << pRoot->value << "\t";
 }
 
-void RebuildTree(char* pPreOrder, char* pInOrder, int nTreeLen, Node** pRoot)
+void RebuildTree(char* pPreOrder, char* pInOrder, int nTreeLen, TreeNode** pRoot)
 {
     //检查条件
 	if (pPreOrder == nullptr || pInOrder == nullptr)
@@ -71,10 +71,10 @@ void RebuildTree(char* pPreOrder, char* pInOrder, int nTreeLen, Node** pRoot)
 		return;
 	}
     //设置根节点
-	Node* pTmp = new Node;
+	TreeNode* pTmp = new TreeNode;
 	pTmp->value = *pPreOrder;
-	pTmp->Left = nullptr;
-	pTmp->Right = nullptr;
+	pTmp->left = nullptr;
+	pTmp->right = nullptr;
 
 	if (*pRoot == nullptr )
 	{
@@ -88,12 +88,12 @@ void RebuildTree(char* pPreOrder, char* pInOrder, int nTreeLen, Node** pRoot)
 
     //找出左子树长度，同理得到右子树长度
 	char* pOrgpInOrder = pInOrder;
-	char* pLeftEnd = pInOrder;
+	char* pleftEnd = pInOrder;
 	int nTmpLen = 0;
 
-	while (*pPreOrder != *pLeftEnd)
+	while (*pPreOrder != *pleftEnd)
 	{
-		if (pPreOrder == nullptr ||pLeftEnd == nullptr)
+		if (pPreOrder == nullptr ||pleftEnd == nullptr)
 		{
 			return;
 		}
@@ -103,28 +103,28 @@ void RebuildTree(char* pPreOrder, char* pInOrder, int nTreeLen, Node** pRoot)
 		{
 			break;
 		}
-		pLeftEnd++;
+		pleftEnd++;
 	}
 
 	int nleftLen = 0;
 	nleftLen = nTmpLen;
 
-	int nRightLen = 0;
-	nRightLen = nTreeLen - nTmpLen - 1;
+	int nrightLen = 0;
+	nrightLen = nTreeLen - nTmpLen - 1;
 
     //重构左子树
 	if (nleftLen>0)
 	{
-		RebuildTree(pPreOrder + 1, pInOrder, nleftLen, &((*pRoot)->Left));
+		RebuildTree(pPreOrder + 1, pInOrder, nleftLen, &((*pRoot)->left));
 	}
     //重构优子树
-	if (nRightLen>0)
+	if (nrightLen>0)
 	{
-		RebuildTree(pPreOrder + nleftLen + 1, pInOrder + nleftLen + 1, nRightLen, &((*pRoot)->Right));
+		RebuildTree(pPreOrder + nleftLen + 1, pInOrder + nleftLen + 1, nrightLen, &((*pRoot)->right));
 	}
 }
 
-int PrintNodeAtLevel(Node* pRoot, int level)
+int PrintTreeNodeAtLevel(TreeNode* pRoot, int level)
 {
 	if (!pRoot || level <0)
 	{
@@ -136,36 +136,74 @@ int PrintNodeAtLevel(Node* pRoot, int level)
 		return 1;
 	}
 
-	return PrintNodeAtLevel(pRoot->Left, level - 1) + PrintNodeAtLevel(pRoot->Right, level - 1);
+	return PrintTreeNodeAtLevel(pRoot->left, level - 1) + PrintTreeNodeAtLevel(pRoot->right, level - 1);
 }
 
-int PrintNodeByLevel(Node* pRoot, int depth)
+int PrintTreeNodeByLevel(TreeNode* pRoot, int depth)
 {
 	for (int level = 0 ; level< depth; level++)
 	{
-		PrintNodeAtLevel(pRoot, level);
+		PrintTreeNodeAtLevel(pRoot, level);
 		cout << endl;
 	}
 
 	return 0;
 }
 
-void PrintNodeByLevel(Node* pRoot)
+void PrintTreeNodeByLevel(TreeNode* pRoot)
 {
 for (int i=0;;i++)
 {
-	if (!PrintNodeAtLevel(pRoot, i))
+	if (!PrintTreeNodeAtLevel(pRoot, i))
 	{
 		break;
 	}
 	cout << endl;
 }
 }
+
+/**
+* Definition for a binary tree node.
+* struct TreeNode {
+*     int val;
+*     TreeNode *left;
+*     TreeNode *right;
+*     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+* };
+*/
+class Solution {
+public:
+    struct TreeNode* trimBST(struct TreeNode* root, int L, int R) {
+        bool notFound = 0;
+        if (root)
+        {
+            if (root->value < L) {
+                root = root->right;
+                notFound = 1;
+            }
+            else if (root->value > R) {
+                root = root->left;
+                notFound = 1;
+            }
+
+            if (notFound) {
+                root = trimBST(root, L, R);
+            }
+
+            if (root) {
+                root->left = trimBST(root->left, L, R);
+                root->right = trimBST(root->right, L, R);
+            }
+        }
+        return root;
+    }
+};
+
 int main()
 {
 	char preOder[TREELEN] = {'a','b','d','c','e','f'};
 	char pInOrder[TREELEN] = {'d','b','a','e','c','f'};
-	Node* pRoot = nullptr;
+	TreeNode* pRoot = nullptr;
 	RebuildTree(preOder, pInOrder, TREELEN, &pRoot);
 	cout <<"PreOrderVisit"<< endl;
 	PreOrderVisit(pRoot);
@@ -176,7 +214,7 @@ int main()
 	cout << "PostOrderVisit" << endl;
 	PostOrderVisit(pRoot);
 	cout << endl;
-	cout << "PrintNodeByLevel" << endl;
-	PrintNodeByLevel(pRoot);
+	cout << "PrintTreeNodeByLevel" << endl;
+	PrintTreeNodeByLevel(pRoot);
 	return 0;
 }

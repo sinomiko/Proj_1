@@ -15,10 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\c11-project\c11Advanced\smartPtr.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Miko\source\repos\TradeMachingEngine\TradeMachingEngine\TradeMachingGithub.cpp">
+    <ClCompile Include="..\..\..\..\problem-set\Frame.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

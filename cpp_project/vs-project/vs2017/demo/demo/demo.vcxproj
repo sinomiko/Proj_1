@@ -19,8 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\c11-project\c11Advanced\smartPtr.cpp" />
-    <ClCompile Include="C:\Users\Miko\source\repos\TradeMachingEngine\TradeMachingEngine\TradeMachingGithub.cpp" />
+    <ClCompile Include="..\..\..\..\problem-set\Frame.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
