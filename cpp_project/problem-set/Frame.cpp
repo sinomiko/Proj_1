@@ -492,6 +492,80 @@ public:
         return longest;
     }
 
+    //566. Reshape the Matrix
+    //https://leetcode.com/problems/reshape-the-matrix/description/
+    vector<vector<int>> matrixReshape(vector<vector<int>>& nums, int r, int c) {
+        vector<vector<int>> res(r, vector<int>(c));
+        if (!nums.empty())
+        {
+            if (r*c != nums.size() * nums[0].size())
+                return nums;
+
+            int rIndex = 0, cIndex = 0;
+            for (auto& row : nums)
+            {
+                for (auto& item : row)
+                {
+                    res[rIndex][cIndex++] = item;
+                    if (cIndex == c)
+                    {
+                        cIndex = 0;
+                        rIndex++;
+                    }
+                }
+            }
+        }
+        return res;
+    }
+
+    //766. Toeplitz Matrix
+    //https://leetcode.com/problems/toeplitz-matrix/description/
+    bool isToeplitzMatrix(vector<vector<int>>& matrix) {
+        if (!matrix.empty())
+        {
+            //if( matrix.size() != matrix[0].size())
+            //    return false;
+
+            for (int i = 0; i < matrix.size(); i++)
+            {
+                for (int j = 0; j < matrix[0].size(); j++)
+                {
+                    if (i + 1 < matrix.size() && j + 1 < matrix[0].size())
+                    {
+                        if (matrix[i + 1][j + 1] != matrix[i][j]) return false;
+                    }
+                }
+            }
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    ////766. Toeplitz Matrix
+    //https://leetcode.com/problems/toeplitz-matrix/discuss/113390/C++-1-liner
+    bool isToeplitzMatrix(vector<vector<int>>& m, int i = 0, int j = 0) {
+        return i == m.size() - 1 || j == m[i].size() - 1 || (m[i][j] == m[i + 1][j + 1]
+            && isToeplitzMatrix(m, j < m[i].size() - 2 ? i : i + 1, j < m[i].size() - 2 ? j + 1 : 0));
+    }
+
+    //824. Goat Latin
+    //https://leetcode.com/problems/goat-latin/description/
+    string toGoatLatin(string S) {
+        stringstream iss(S), oss;
+        string vowels("aeiouAEIOU"), word, a;
+        while (iss >> word)
+        {
+            a += 'a';
+            if (vowels.find_first_of(word[0]) != string::npos)
+                oss << ' ' << word << "ma" << a;
+            else
+                oss << ' ' << word.substr(1) << word[0] << "ma" << a;
+        }
+        return oss.str().substr(1);
+    }
 };
 //12. 带最小值操作的栈 
 //https://www.lintcode.com/zh-cn/problem/min-stack/
