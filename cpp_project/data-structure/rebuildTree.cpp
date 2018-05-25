@@ -1,11 +1,12 @@
 #include <iostream>
 #include <memory>
+#include <vector>
 #define  TREELEN 6
 using namespace std;
 
 struct TreeNode
 {
-	char value;
+	char val;
 	TreeNode* left;
 	TreeNode* right;
 };
@@ -16,7 +17,7 @@ void PreOrderVisit(TreeNode* pRoot)
 	{
 		return;
 	}
-	cout << pRoot->value << "\t";
+	cout << pRoot->val << "\t";
 	if (pRoot->left)
 	{
 		PreOrderVisit(pRoot->left);
@@ -38,7 +39,7 @@ void InOrderVisit(TreeNode* pRoot)
 	{
 		InOrderVisit(pRoot->left);
 	}
-	cout << pRoot->value << "\t";
+	cout << pRoot->val << "\t";
 	if (pRoot->right)
 	{
 		InOrderVisit(pRoot->right);
@@ -60,7 +61,7 @@ void PostOrderVisit(TreeNode* pRoot)
 	{
 		PostOrderVisit(pRoot->right);
 	}
-	cout << pRoot->value << "\t";
+	cout << pRoot->val << "\t";
 }
 
 void RebuildTree(char* pPreOrder, char* pInOrder, int nTreeLen, TreeNode** pRoot)
@@ -72,7 +73,7 @@ void RebuildTree(char* pPreOrder, char* pInOrder, int nTreeLen, TreeNode** pRoot
 	}
     //设置根节点
 	TreeNode* pTmp = new TreeNode;
-	pTmp->value = *pPreOrder;
+	pTmp->val = *pPreOrder;
 	pTmp->left = nullptr;
 	pTmp->right = nullptr;
 
@@ -132,7 +133,7 @@ int PrintTreeNodeAtLevel(TreeNode* pRoot, int level)
 	}
 	if (level ==0)
 	{
-		cout << pRoot->value << "\t";
+		cout << pRoot->val << "\t";
 		return 1;
 	}
 
@@ -152,15 +153,17 @@ int PrintTreeNodeByLevel(TreeNode* pRoot, int depth)
 
 void PrintTreeNodeByLevel(TreeNode* pRoot)
 {
-for (int i=0;;i++)
-{
-	if (!PrintTreeNodeAtLevel(pRoot, i))
-	{
-		break;
-	}
-	cout << endl;
+    for (int i = 0;; i++)
+    {
+        if (!PrintTreeNodeAtLevel(pRoot, i))
+        {
+            break;
+        }
+        cout << endl;
+    }
 }
-}
+
+
 
 /**
 * Definition for a binary tree node.
@@ -177,11 +180,11 @@ public:
         bool notFound = 0;
         if (root)
         {
-            if (root->value < L) {
+            if (root->val < L) {
                 root = root->right;
                 notFound = 1;
             }
-            else if (root->value > R) {
+            else if (root->val > R) {
                 root = root->left;
                 notFound = 1;
             }
@@ -196,6 +199,37 @@ public:
             }
         }
         return root;
+    }
+    int TreeNodeAtLevel(TreeNode* pRoot, int level, double& avg, int& num)
+    {
+        if (!pRoot || level < 0)
+        {
+            return 0;
+        }
+
+        if (level == 0)
+        {
+            num++;
+            avg = (avg + pRoot->val) / num;
+            return 1;
+        }
+        return TreeNodeAtLevel(pRoot->left, level - 1, avg, num) + TreeNodeAtLevel(pRoot->right, level - 1, avg, num);
+    }
+    vector<double> averageOfLevels(TreeNode* root) {
+        vector<double> ret;
+        for (int i = 0;; i++)
+        {
+            double avg = 0;
+            int num = 0;
+            if (!TreeNodeAtLevel(root, i, avg, num))
+            {
+                break;
+            }
+            else {
+                ret.push_back(avg);
+            }
+        }
+        return ret;
     }
 };
 

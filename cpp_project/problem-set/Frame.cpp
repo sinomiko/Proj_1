@@ -566,6 +566,137 @@ public:
         }
         return oss.str().substr(1);
     }
+
+    //496. Next Greater Element I
+    //https://leetcode.com/problems/next-greater-element-i/description/
+    vector<int> nextGreaterElement(vector<int>& findNums, vector<int>& nums) {
+        vector<int> result(findNums.size());
+
+        int tmp = 0;
+        for (int i = 0; i < findNums.size(); i++)
+        {
+            int cmp = findNums[i];
+
+            for (int j = (tmp > i ? tmp : i); j < nums.size(); j++)
+            {
+                if (cmp < nums[j])
+                {
+                    cmp = nums[j];
+                    tmp = j;
+                    break;
+                }
+
+            }
+
+            if (cmp != findNums[i])
+                result[i] = cmp;
+            else
+                result[i] = -1;
+        }
+        return result;
+    }
+
+    //806. Number of Lines To Write String
+    //https://leetcode.com/problems/number-of-lines-to-write-string/description/
+    vector<int> numberOfLines(vector<int>& widths, string S) {
+        map<char, int> count;
+        vector<int> ret;
+        int line = 1;
+        int res = 0;
+        for (auto i : S)
+        {
+            if (res + widths[i - 'a'] > 100)
+            {
+                line++;
+                res = widths[i - 'a'];
+            }
+            else if (res + widths[i - 'a'] == 100)
+            {
+                line++;
+                res = 0;
+            }
+            else
+                res += widths[i - 'a'];
+        }
+
+        ret.push_back(line);
+        ret.push_back(res);
+        return ret;
+    }
+
+    //637. Average of Levels in Binary Tree
+    //https://leetcode.com/problems/average-of-levels-in-binary-tree/description/
+    int TreeNodeAtLevel(TreeNode* pRoot, int level, double& avg, int& num)
+    {
+        if (!pRoot || level < 0)
+        {
+            return 0;
+        }
+
+        if (level == 0)
+        {
+            num++;
+            avg = (avg + pRoot->val);
+            return 1;
+        }
+        return TreeNodeAtLevel(pRoot->left, level - 1, avg, num) + TreeNodeAtLevel(pRoot->right, level - 1, avg, num);
+    }
+
+    vector<double> averageOfLevels(TreeNode* root) {
+        vector<double> ret;
+        for (int i = 0;; i++)
+        {
+            double avg = 0;
+            int num = 0;
+            if (!TreeNodeAtLevel(root, i, avg, num))
+            {
+                break;
+            }
+            else {
+                ret.push_back(avg/num);
+            }
+        }
+        return ret;
+    }
+
+    //107. Binary Tree Level Order Traversal II
+    //https://leetcode.com/problems/binary-tree-level-order-traversal-ii/description/
+    int TreeNodeAtLevel(TreeNode* pRoot, int level, vector<int>& levelContent)
+    {
+        if (!pRoot || level < 0)
+        {
+            return 0;
+        }
+
+        if (level == 0)
+        {
+            levelContent.push_back(pRoot->val);
+            return 1;
+        }
+        return TreeNodeAtLevel(pRoot->left, level - 1, levelContent) + TreeNodeAtLevel(pRoot->right, level - 1, levelContent);
+    }
+
+    vector<vector<int>> levelOrderBottom(TreeNode* root) {
+        vector<vector<int>> ret;
+        for (int i; ; i++)
+        {
+            vector<int> levelContent;
+            if (!TreeNodeAtLevel(root, i, levelContent))
+            {
+                break;
+            }
+            ret.push_back(levelContent);
+        }
+
+        reverse(ret.begin(), ret.end());
+        return ret;
+    }
+
+    //693. Binary Number with Alternating Bits
+    //https://leetcode.com/problems/binary-number-with-alternating-bits/description/
+    bool hasAlternatingBits(int n) {
+        return !((n - (n >> 2))&(n - (n >> 2) - 1));
+    }
 };
 //12. 带最小值操作的栈 
 //https://www.lintcode.com/zh-cn/problem/min-stack/
@@ -629,9 +760,26 @@ int main() {
 //     cout << ms.min() << endl;
 //     ms.push(1);
 //     cout << ms.min() << endl;
-    vector<int> test{ 9,1,-3,2,4,8,3,-1,6,-2,-4,7 };
-    int ret = ps.longestConsecutive(test);
-    cout << ret << endl;
-    
+//     vector<int> test{ 9,1,-3,2,4,8,3,-1,6,-2,-4,7 };
+//     int ret = ps.longestConsecutive(test);
+
+//     vector<int> t1{ 4,1,2 };
+//     vector<int> t2{ 1, 3, 4, 2 };
+// 
+//     vector<int> ret = ps.nextGreaterElement(t1, t2);
+//     for (auto& it : ret)
+//     {
+//         cout << it <<"\t";
+//     }
+//     vector<int> t1{ 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
+//     string s = "abcdefghijklmnopqrstuvwxyz";
+//     vector<int> ret = ps.numberOfLines(t1,s);
+//     for (auto i: ret)
+//     {
+//         cout << i << "\t";
+//     }
+    bool ret = ps.hasAlternatingBits(8);
+    cout << ret << "\t";
+    getchar();
     return 0;
 }
