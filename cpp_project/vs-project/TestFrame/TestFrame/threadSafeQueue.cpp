@@ -105,7 +105,7 @@ std::unique_ptr<typename ThreadSafeQueue<T>::Node> ThreadSafeQueue<T>::TryPopHea
     unique_ptr<Node> oldHead = std::move(head);
     head = move(oldHead->next);
     return oldHead;
-//    return PopHead();
+/*    return PopHead();*/
 }
 
 template <typename T>
@@ -115,7 +115,7 @@ std::unique_ptr<typename ThreadSafeQueue<T>::Node> ThreadSafeQueue<T>::WaitPopHe
     unique_ptr<Node> oldHead = std::move(head);
     head = move(oldHead->next);
     return oldHead;
-    //return PopHead();
+/*    return PopHead();*/
 }
 
 template <typename T>
@@ -193,39 +193,39 @@ void testQueue(int id)
     for (int i=0;i<1000;i++)
     {
         int ran = rand();
-        cout << "thread£º" << id << " rand: " << ran % 5 << endl;
+        cout << "thread£º" << id << " rand: " << ran % 5 << "\n" << std::flush;
 
         switch (ran %5)
         {
         case 0:
             nodePtr = gThreadSafeQueue.WaitPopHead();
-            cout << "WaitPopHead: data:" << *(nodePtr->data) << endl;
+            cout << "thread£º" << id << " WaitPopHead: data:" << *(nodePtr->data) << "\n" << std::flush;
             break;
         case 1:
             gThreadSafeQueue.Push(rand());
         	break;
         case 2:
             gThreadSafeQueue.Push(rand());
-             break;
+            break;
         case 3:
             node = gThreadSafeQueue.GetTail();
             if (node&&node->data)
             {
 
-                cout << "GetTail: data:" << *(node->data) << endl;
+                cout << "thread£º" << id << " GetTail: data:" << *(node->data) << "\n" << std::flush;
             }
             break;
         case 4:
             dataPtr = gThreadSafeQueue.TryPop();
             if (dataPtr)
             {
-                cout << "TryPop: data:" << *(dataPtr) << endl;
+                cout << "thread£º" << id << " TryPop: data:" << *(dataPtr) << "\n" << std::flush;
             }
             break;
         }
-        cout << "thread£º" << id << " op end" << endl;
+        cout << "thread£º" << id << " op end" << "\n" << std::flush;
     }
-    cout << "thread£º" << id << " end" << endl;
+    cout << "thread£º" << id << " end" << endl << std::flush;
     gFlag.store(true);
 }
 
@@ -233,8 +233,11 @@ void addVal(int id)
 {
     while (!gFlag.load())
     {
-        this_thread::sleep_for(std::chrono::milliseconds(500));
-        gThreadSafeQueue.Push(rand());
+        this_thread::sleep_for(std::chrono::milliseconds(1000));
+        int input = rand();
+        cout << "thread£º" << id << " input: "<< input << "\n" << std::flush;
+        gThreadSafeQueue.Push(input);
+
     }
 
 }

@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\problem-set\Frame.cpp">
+    <ClCompile Include="..\..\..\TestFrame\TestFrame\lockFreeStack.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
