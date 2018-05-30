@@ -1,4 +1,3 @@
-#include <string>
 #include <Windows.h>
 #include <winioctl.h>
 #include <iostream>
