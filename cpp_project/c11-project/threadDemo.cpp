@@ -1,174 +1,81 @@
-#include <string>
-#include <iostream>
-#include <future>
-#include <list>
+#include<iostream>
 #include <thread>
-#include <assert.h>
+#include <map>
+#include <set>
+#include <list>
+#include <cmath>
+#include <ctime>
+#include <deque>
+#include <queue>
+#include <stack>
+#include <string>
+#include <bitset>
+#include <cstdio>
+#include <limits>
+#include <vector>
+#include <climits>
+#include <cstring>
+#include <cstdlib>
+#include <fstream>
+#include <numeric>
+#include <sstream>
+#include <iostream>
+#include <algorithm>
+#include <unordered_map>
+#include <iterator>
 using namespace std;
-
-
-class Foo {};
-
-template <typename T>
-list<T> parrallel_quick_sort(list<T> input)
+template <typename Iterator, typename T>
+struct accumulate_block
 {
-    if (input.empty())
+    void operator()(Iterator first, Iterator last, T& result)
     {
-        return input;
+        result = std::accumulate(first, last, result);
     }
-    list<T> result;
-    result.splice(result.begin(), input, input.begin());
-    T const& pivot = *result.begin();
-    auto divide_point = std::partition(input.begin(), input.end(), [&](T const& t) {return t < pivot; });
-
-    list<T> lower_part;
-    lower_part.splice(lower_part.end(), input, input.begin(), divide_point);
-    std::future<list<T>> new_lower(async(&parrallel_quick_sort<T>, move(lower_part)));
-    auto new_higher( parrallel_quick_sort(move(input)));
-    result.splice(result.end(), new_higher);
-    result.splice(result.begin(), new_lower.get());
-
-    return result;
-}
-void test_parrallel_quick_sort() 
-{
-    list<int> testList;
-    for (int i = 0; i < 20; i++)
-    {
-        testList.push_back(rand());
-
-    }
-    for (auto it : testList)
-    {
-        cout << it << "\t";
-    }
-
-    cout << endl;
-    list<int> res = parrallel_quick_sort<int>(testList);
-    for (auto it : res)
-    {
-        cout << it << "\t";
-    }
-
-    cout << endl;
-
-}
-void memoryOrder()
-{
-    Foo some_array[5];
-    std::atomic<Foo*> p(some_array);
-    Foo* x = p.fetch_add(2); // p加2，并返回原始值
-    assert(x == some_array);
-    assert(p.load() == &some_array[2]);
-    x = (p -= 1); // p减1，并返回原始值
-    assert(x == &some_array[1]);
-    assert(p.load() == &some_array[1]);
-}
-
-std::atomic<bool> x, y;
-std::atomic<int> z;
-void write_x_then_y()
-{
-    x.store(true, std::memory_order_relaxed); // 1
-    y.store(true, std::memory_order_relaxed); // 2
-}
-void read_y_then_x()
-{
-    while (!y.load(std::memory_order_relaxed)); // 3
-    if (x.load(std::memory_order_relaxed)) // 4
-        ++z;
-}
-
-void testRelax() 
-{
-    x = false;
-    y = false;
-    z = 0;
-    std::thread a(write_x_then_y);
-    std::thread b(read_y_then_x);
-    a.join();
-    b.join();
-    assert(z.load() != 0); // 5
-}
-
-
-
-std::atomic<int> xx(0), yy(0), zz(0); // 1
-std::atomic<bool> go(false); // 2
-unsigned const loop_count = 10;
-struct read_values
-{
-    int xx, yy, zz;
 };
-read_values values1[loop_count];
-read_values values2[loop_count];
-read_values values3[loop_count];
-read_values values4[loop_count];
-read_values values5[loop_count];
-void increment(std::atomic<int>* var_to_inc, read_values* values)
+
+template<typename Iterator, typename T>
+T parallel_accumulate(Iterator first, Iterator last, T init)
 {
-    while (!go)
-        std::this_thread::yield(); // 3 自旋，等待信号
-    for (unsigned i = 0; i < loop_count; ++i)
+    unsigned long const length = distance(first, last);
+    if (!length)
     {
-        values[i].xx = xx.load(std::memory_order_seq_cst);
-        values[i].yy = yy.load(std::memory_order_seq_cst);
-        values[i].zz = zz.load(std::memory_order_seq_cst);
-        var_to_inc->store(i + 1, std::memory_order_seq_cst); // 4
-        std::this_thread::yield();
+        return init;
     }
+    unsigned long const min_per_thread = 25;
+    unsigned long const max_threads = (length + min_per_thread - 1) / min_per_thread;
+    unsigned long const hard_threads = std::thread::hardware_concurrency();
+
+    unsigned long const num_threads = std::min(hard_threads != 0 ? hard_threads : 4, max_threads);
+    unsigned long const block_size = length / num_threads;
+
+    std::vector<T> results(num_threads);
+    std::vector<std::thread> threads(num_threads - 1);
+    Iterator block_start = first;
+    for (unsigned long i=0;i<(num_threads-1);++i)
+    {
+        Iterator block_end = block_start;
+        std::advance(block_end, block_size);
+        threads[i] = std::thread(accumulate_block<Iterator, T>(), block_start, block_end, std::ref(results[i]));
+        block_start = block_end;
+    }
+
+    accumulate_block<Iterator, T>()(block_start, last, results[num_threads - 1]);
+    std::for_each(threads.begin(), threads.end(), mem_fun(&std::thread::join));
+    return accumulate(results.begin(), results.end(), init);
 }
 
-void read_vals(read_values* values)
-{
-    while (!go)
-        std::this_thread::yield(); // 5 自旋，等待信号
-    for (unsigned i = 0; i < loop_count; ++i)
-    {
-        values[i].xx = xx.load(std::memory_order_seq_cst);
-        values[i].yy = yy.load(std::memory_order_seq_cst);
-        values[i].zz = zz.load(std::memory_order_seq_cst);
-        std::this_thread::yield();
-    }
-}
-void print(read_values* v)
-{
-    for (unsigned i = 0; i < loop_count; ++i)
-    {
-        if (i)
-            std::cout << ",";
-        std::cout << "(" << v[i].xx << "," << v[i].yy << "," << v[i].zz << ")";
-    }
-    std::cout << std::endl;
-}
-
-void testRelax2()
-{
-    std::thread t1(increment, &xx, values1);
-    std::thread t2(increment, &yy, values2);
-    std::thread t3(increment, &zz, values3);
-    std::thread t4(read_vals, values4);
-    std::thread t5(read_vals, values5);
-    go = true; // 6 开始执行主循环的信号
-    t5.join();
-    t4.join();
-    t3.join();
-    t2.join();
-    t1.join();
-    print(values1); // 7 打印最终结果
-    print(values2);
-    print(values3);
-    print(values4);
-    print(values5);
-}
 int main(int argc, char* argv[])
 {
-
-    testRelax2();
-
-
+    vector<int> tmp;
+    for (int i =0;i<2500000;i++)
+    {
+        tmp.push_back(rand());
+    }
+    unsigned long init = 0;
+    using iterator_type = decltype(std::begin(tmp));
     
-    cout << "end" << endl;
+    accumulate_block<typename std::vector<int>::iterator, int>(tmp.begin(), tmp.end(), init);
+//    std::thread::get_id()
     getchar();
     return 0;
 }
