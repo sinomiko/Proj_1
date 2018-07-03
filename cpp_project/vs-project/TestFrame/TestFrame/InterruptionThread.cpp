@@ -106,16 +106,16 @@ int main(int argc, char* argv[])
 //     DefaultClass dc2 = std::move(dc);
 
      MapCompare mc;
-//     set<string> setStr;
-//     setStr.insert("a");
-//     setStr.insert("b");
-//     mc.testMap["123"] = setStr;
-// 
+     MapCompare::AA aa1;
+     aa1.name = "aa1";
+     aa1.address.insert("1");
+     mc.testMap["1"] = aa1;
+
      MapCompare mc2;
-//     set<string> setStr2;
-//     setStr2.insert("a");
-//     setStr2.insert("d");
-//     mc2.testMap["123"] = setStr2;
+     MapCompare::AA aa2;
+     aa2.name = "aa2";
+     aa2.address.insert("2");
+     mc2.testMap["2"] = aa2;
 
     if (mc == mc2)
     {
@@ -125,6 +125,7 @@ int main(int argc, char* argv[])
     {
         cout << "map not equal" << endl;
     }
+    mc2.testMap.erase("1");
     getchar();
     return 0;
 }
