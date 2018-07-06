@@ -28,9 +28,16 @@ def TimeCmp(lPara, rPara):
 
 
 def Task(index,padding):
-    while True:
-        Safeprint("thread " + str(index)+ " is running============================================ \n"+"oh")
-        time.sleep(1)
+    global readyForTask
+    while readyForTask == False:
+        readyForTask = True
+        Safeprint("thread " + str(index)+ " is running ============================================ \n")
+        time.sleep(10)
+        sys.exit(0)
+        Safeprint("thread " + str(index)+ " is over ============================================ \n")
+    Safeprint("thread " + str(index)+ " is exiting ============================================ \n")
+    time.sleep(20)
+    Safeprint("thread " + str(index)+ " is exited ============================================ \n")
 
 if __name__ == '__main__':
 
