@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <vector>
 #include <iterator>
+
 using namespace std;
 void print(set<int> a)
 {
@@ -35,8 +36,16 @@ SA ={x|x∈(A∪B)∧x 不属于A}
 SB ={x|x∈(A∪B)∧x 不属于B}
 
 */
+
+template<typename ...Args>
+constexpr int sum17(Args... args) {
+    return (0 + ... + args);
+}
+
 int main()
 {
+//    int sum = sum17<>();
+//    cout << sum << endl;
     int T, cou = 0;
     set<int> a, b, c;
     cin >> T;
