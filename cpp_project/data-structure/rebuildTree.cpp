@@ -88,7 +88,6 @@ void RebuildTree(char* pPreOrder, char* pInOrder, int nTreeLen, TreeNode** pRoot
 	}
 
     //找出左子树长度，同理得到右子树长度
-	char* pOrgpInOrder = pInOrder;
 	char* pleftEnd = pInOrder;
 	int nTmpLen = 0;
 

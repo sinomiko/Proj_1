@@ -697,6 +697,31 @@ public:
     bool hasAlternatingBits(int n) {
         return !((n - (n >> 2))&(n - (n >> 2) - 1));
     }
+
+    /*
+    *832. Flipping an Image
+    *https://leetcode.com/problems/flipping-an-image/description/
+    */
+    vector<vector<int>> flipAndInvertImage(vector<vector<int>>& A) {
+        vector<vector<int>> res;
+        for (auto& vects : A)
+        {
+            vector<int> tmp;
+            for (vector<int>::reverse_iterator rit = vects.rbegin(); rit != vects.rend(); ++rit)
+            {
+                tmp.push_back(*rit);
+            }
+            res.push_back(tmp);
+        }
+        for_each(res.begin(), res.end(), [](vector<int>& tmp)
+        { for (auto& it : tmp)
+        {
+            it = 1 - it;
+        }
+        }
+        );
+        return res;
+    }
 };
 //12. 带最小值操作的栈 
 //https://www.lintcode.com/zh-cn/problem/min-stack/
@@ -778,8 +803,19 @@ int main() {
 //     {
 //         cout << i << "\t";
 //     }
-    bool ret = ps.hasAlternatingBits(8);
-    cout << ret << "\t";
+//     bool ret = ps.hasAlternatingBits(8);
+//     cout << ret << "\t";
+
+    vector<vector<int>> input = { {1, 1, 0},{1, 0, 1},{0, 0, 0} };
+    auto res = ps.flipAndInvertImage(input);
+
+    for_each(res.begin(), res.end(), [](vector<int>& tmp)
+    { for (auto& it : tmp)
+    {
+        cout << it << endl;
+    }
+    }
+    );
     getchar();
     return 0;
 }
