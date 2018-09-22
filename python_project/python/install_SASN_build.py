@@ -7,32 +7,30 @@ class installSASN(object):
     """
     def installSASNCMD(self):
 
-        p = pexpect.spawn('ssh netspira@%s' % self.__host_name)
+        p = pexpect.spawn('ssh **@%s' % self.__host_name)
         try:
             i = p.expect(['(?i)password:', '(?i)continue connecting (yes/no)?'], timeout=10)
             if i == 0 :
-                p.sendline("lucas21")
+                p.sendline("**")
             elif i == 1:
                 p.sendline('yes\n')
                 p.expect('(?i)password:')
-                p.sendline("lucas21")
+                p.sendline("**")
 
             p.sendline("scp root@netrax3-2-10:/software/changeSDK.sh /root/")
             i = p.expect(['(?i)password:', '(?i)continue connecting (yes/no)?'], timeout=3)
             if i == 0 :
-                p.sendline("lucas21")
+                p.sendline("**")
             elif i == 1:
                 p.sendline('yes\n')
                 p.expect('(?i)password:')
-                p.sendline("lucas21")
+                p.sendline("**")
 
             p.sendline("cd /tmp/NightswatchLastSASN/ \n")
 
             p.sendline("rm -rf cxp9000000* \n")
 
-            p.sendline("wget https://nexus.netspira.eld.es.eu.ericsson.se/nexus/service/local/repositories/\
-            development_proxy/content/com/ericsson/sasn/cxp9000000_14a15br1a38_00_maintenance_14a15b_branch_69\
-            /sasn-cxp9000000_14a15br1a38_00_maintenance_14a15b_branch_69.tar.gz  --no-check-certificate\n")
+            p.sendline("wget **")
 
             ret = 0
         except pexpect.EOF:
@@ -46,15 +44,15 @@ class installSASN(object):
         return ret
 
     def QueryInstallSASNStatus(self):
-        p = pexpect.spawn('ssh netspira@%s' % self.__host_name)
+        p = pexpect.spawn('ssh **@%s' % self.__host_name)
         try:
             i = p.expect(['(?i)password:', '(?i)continue connecting (yes/no)?'], timeout=10)
             if i == 0 :
-                p.sendline("lucas21")
+                p.sendline("**")
             elif i == 1:
                 p.sendline('yes\n')
                 p.expect('(?i)password:')
-                p.sendline("lucas21")
+                p.sendline("**")
 
             p.sendline("cd ~")
             p.sendline("tail 15 nohup.out\n")
@@ -97,8 +95,8 @@ class installSASN(object):
 
 if __name__  == "__main__":
     iSASN=installSASN()
-    print  "This script will install SASN on SASN maintenance pool \n"
-    print  "if query install status SASN on many host in maintenance pool,please input mode: 'all'\n"
+    print  "This script will install ** on ** maintenance pool \n"
+    print  "if query install status ** on many host in maintenance pool,please input mode: 'all'\n"
     print  "if query install status on one host in maintenance pool,please input mode: 'one'\n"
     print  "other input is exit program\n"
     mode=raw_input("input mode:")
